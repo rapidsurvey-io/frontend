@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        Poll
+        RapidSurvey.io
       </h1>
       <h2 class="subtitle">
         My praiseworthy Nuxt.js project

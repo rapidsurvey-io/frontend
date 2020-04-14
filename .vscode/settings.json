@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    ".vscode": true,
+    ".nuxt": true,
+    "node_modules": true,
+    "package-lock.json": true,
+    "coverage": true
+  }
+}
