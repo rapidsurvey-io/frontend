@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Logo from '@/components/Logo.vue'
+import pageHeader from '@/components/shared/page-header.vue'
 
-describe('Logo', () => {
+describe('page-header', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Logo)
+    const wrapper = mount(pageHeader)
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })
