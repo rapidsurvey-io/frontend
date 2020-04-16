@@ -1,8 +1,19 @@
 <template>
   <div>
+    <brand-navigator />
     <nuxt />
   </div>
 </template>
+
+<script>
+import brandNavigator from '~/components/navigation/brand-navigator.vue'
+
+export default {
+  components: {
+    brandNavigator
+  }
+}
+</script>
 
 <style>
 html {
