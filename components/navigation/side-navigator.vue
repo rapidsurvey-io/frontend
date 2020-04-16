@@ -1,6 +1,6 @@
 <template>
   <section class="c-side-navigator">
-    <navigator-link text="Ask a question" target="/" />
+    <navigator-link text="Ask a question" target="/ask" />
   </section>
 </template>
 
@@ -17,7 +17,9 @@ export default {
 <style scoped>
   .c-side-navigator {
     display: inline-block;
-    width: 450px;
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
     background-color: #B2CDFF;
     height: calc(100vh - 67px);
   }

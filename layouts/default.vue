@@ -3,7 +3,9 @@
     <brand-navigator />
     <div class="window">
       <side-navigator />
-      <nuxt />
+      <div class="pane">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>
@@ -54,5 +56,9 @@ p {
 
 .window {
   display: flex;
+}
+
+.pane {
+  flex-grow: 1;
 }
 </style>
