@@ -1,16 +1,21 @@
 <template>
   <div>
     <brand-navigator />
-    <nuxt />
+    <div class="window">
+      <side-navigator />
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <script>
 import brandNavigator from '~/components/navigation/brand-navigator.vue'
+import sideNavigator from '@/components/navigation/side-navigator.vue'
 
 export default {
   components: {
-    brandNavigator
+    brandNavigator,
+    sideNavigator
   }
 }
 </script>
@@ -45,5 +50,9 @@ h1 {
 
 p {
   font-size: 1rem;
+}
+
+.window {
+  display: flex;
 }
 </style>
