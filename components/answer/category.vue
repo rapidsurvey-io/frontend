@@ -2,7 +2,6 @@
   <section class="c-category">
     <div class="c-category-header">
       <h2>Category title</h2>
-      <p>Category description goes here</p>
     </div>
 
     <div class="c-category-questions">
@@ -27,7 +26,7 @@ export default {
 <style scoped>
   .c-category {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .c-category-header {
@@ -36,11 +35,11 @@ export default {
     left: 0;
     right: 0;
     position: sticky;
-    padding: 60px 30px 80px 30px;
+    padding: 100px 30px 120px 30px;
     background-color: #E2E2E2;
   }
 
   .c-category-questions {
-    margin-top: -120px;
+    margin-top: -200px;
   }
 </style>

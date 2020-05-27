@@ -3,6 +3,10 @@ export default {
     '@nuxtjs/eslint-module'
   ],
 
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
+
   head: {
     title: 'RapidSurvey.io',
     meta: [{
@@ -37,6 +41,7 @@ export default {
   ],
 
   plugins: [
+    '~/plugins/fontawesome.plugin.js',
     '~/plugins/sharedComponents.plugin.js'
   ],
 

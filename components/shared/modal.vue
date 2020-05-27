@@ -2,7 +2,7 @@
   <overlay>
     <div class="c-modal">
       <div class="c-modal-header">
-        <p v-text="props.header" />
+        <slot name="header" />
       </div>
 
       <div class="c-modal-body">
