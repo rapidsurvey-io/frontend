@@ -27,17 +27,20 @@ export default {
 <style scoped>
 .c-modal {
   position: fixed;
-  top: 100px;
+  top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
   margin: 0 auto;
   background-color: white;
-  border: 1px solid black;
-  z-index: 3;
+  z-index: 20;
   height: 500px;
-  width: 500px;
+  width: 600px;
   border-radius: 5px;
+}
+
+.c-modal-header {
+  background-color: #E2E2E2;
   padding: 20px;
 }
 </style>

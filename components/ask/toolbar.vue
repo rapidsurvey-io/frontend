@@ -21,6 +21,7 @@ export default {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 10;
 }
 
 .c-toolbar-button {

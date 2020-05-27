@@ -20,6 +20,6 @@ export default {
     top: 0;
     background-color: #003FBA;
     padding: 10px 30px;
-    z-index: 2;
+    z-index: 4;
   }
 </style>
