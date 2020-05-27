@@ -4,6 +4,12 @@
     ".nuxt": true,
     "node_modules": true,
     "package-lock.json": true,
-    "coverage": true
+    "coverage": true,
+    "jsconfig.json": true,
+    "jest.config.js": true,
+    ".gitignore": true,
+    ".editorconfig": true,
+    ".babelrc": true,
+    ".github": true
   }
 }

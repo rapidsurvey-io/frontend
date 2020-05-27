@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="c-layout">
     <brand-navigator />
     <div class="window">
-      <side-navigator />
+      <side-navigator v-if="false" />
       <div class="pane">
         <nuxt />
       </div>
@@ -33,6 +33,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #EDEDED;
 }
 
 *,

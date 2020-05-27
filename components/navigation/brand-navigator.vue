@@ -16,7 +16,10 @@ export default {
 
 <style scoped>
   .c-brand-navigator {
+    position: sticky;
+    top: 0;
     background-color: #003FBA;
     padding: 10px 30px;
+    z-index: 2;
   }
 </style>
