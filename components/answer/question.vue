@@ -7,18 +7,17 @@
       v-text="questionDescription" />
 
     <br>
-    <question-choice />
-    <question-choice />
-    <question-choice />
+
+    <yes-no-response v-if="responseType === '1'" />
   </div>
 </template>
 
 <script>
-import QuestionChoice from '@/components/answer/types/choice.vue'
+import YesNoResponse from '@/components/answer/types/yesNo.vue'
 
 export default {
   components: {
-    QuestionChoice
+    YesNoResponse
   },
 
   props: {
@@ -30,6 +29,11 @@ export default {
     questionDescription: {
       type: String,
       default: ''
+    },
+
+    responseType: {
+      type: String,
+      default: '1'
     }
   }
 }
@@ -42,17 +46,20 @@ export default {
     max-width: 90%;
     margin: 0 auto;
     margin-bottom: 15px;
-    min-height: 250px;
+    min-height: 200px;
     background-color: white;
     z-index: 1;
     border-radius: 10px;
 
     @media (max-width: 1024px) {
       margin-right: 30px;
+      width: 500px;
     }
 
     @media (max-width: 768px) {
       margin: 0 auto;
+      margin-bottom: 15px;
+      width: 90%;
     }
   }
 

@@ -28,6 +28,15 @@
         <hr>
 
         <field-select
+          v-model="responseType"
+          label="How should the visitor respond?">
+          <option value="1">Yes or No</option>
+          <option value="2">Multiple Choice</option>
+        </field-select>
+
+        <hr>
+
+        <field-select
           v-model="categorySelection"
           label="What category does the question belong too?">
           <option value="new">Create a new category</option>
@@ -45,23 +54,15 @@
           label="What do you want to call the category? (*)"
           is-required />
 
-        <hr>
+        <div class="c-questionBuilder-footer">
+          <square-button
+            text="Cancel"
+            :execute="cancel"
+            type="button" />
 
-        <field-select
-          v-model="responseType"
-          label="How should the visitor respond?">
-          <option value="1">Yes or No</option>
-        </field-select>
-
-      <div class="c-questionBuilder-footer">
-        <square-button
-          text="Cancel"
-          :execute="cancel"
-          type="button" />
-
-         <square-button
-          text="Add Question"
-          is-primary />
+          <square-button
+            text="Add Question"
+            is-primary />
         </div>
       </form>
     </template>

@@ -120,6 +120,11 @@ hr {
   margin: 0 auto;
 }
 
+.u-flex-stretch {
+  display: flex;
+  align-items: stretch;
+}
+
 .u-flex-grow {
   flex-grow: 1;
   max-width: 100%;

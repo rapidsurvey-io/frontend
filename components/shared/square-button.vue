@@ -2,8 +2,8 @@
   <button
     class="c-button"
     :type="type"
-    @click="execute"
-    v-bind:class="[{ 'u-primary': isPrimary }]">
+    v-bind:class="[{ 'u-primary': isPrimary }]"
+    @click="execute">
     <span
       v-text="text" />
   </button>
