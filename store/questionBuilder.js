@@ -1,20 +1,21 @@
 export const state = () => ({
-  show: false
+  showQuestionBuilder: false
 })
 
 export const mutations = {
   hide: (state) => {
-    state.show = false
+    state.showQuestionBuilder = false
   },
 
-  show: (state, message) => {
-    state.show = true
+  show: (state) => {
+    state.showQuestionBuilder = true
   }
 }
 
 export const actions = {
-  start: ({ commit }) =>
-    commit('show'),
+  start: ({ commit }) => {
+    commit('show')
+  },
 
   cancel: ({ commit }) =>
     commit('hide')

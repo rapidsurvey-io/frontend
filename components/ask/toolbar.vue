@@ -29,6 +29,7 @@ export default {
   padding: 10px;
   border-radius: 50%;
   padding: 15px;
+  border: 1px solid #EDEDED;
   transition: all 0.2s ease-in-out;
 
   &:hover {

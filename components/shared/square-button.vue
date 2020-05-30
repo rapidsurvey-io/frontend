@@ -1,11 +1,16 @@
 <template>
-  <div class="c-button" v-bind:class="[{ 'u-primary': isPrimary }]">
-    <span v-text="text" />
-  </div>
+  <button
+    class="c-button"
+    type="submit"
+    @class="[{ 'u-primary': isPrimary }]">
+    <span
+      v-text="text" />
+  </button>
 </template>
 
 <script>
 export default {
+  name: 'SquareButton',
   props: {
     text: {
       type: String,

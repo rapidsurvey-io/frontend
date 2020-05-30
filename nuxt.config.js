@@ -37,7 +37,8 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-webfontloader'
   ],
 
   plugins: [
@@ -47,5 +48,11 @@ export default {
 
   server: {
     host: '0.0.0.0'
-  }
+  },
+
+  webfontloader: {
+    google: {
+      families: ['Karla:400,400&display=swap']
+    }
+  },
 }

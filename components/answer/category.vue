@@ -1,24 +1,43 @@
 <template>
   <section class="c-category">
     <div class="c-category-header">
-      <h2>Category title</h2>
+      <h2
+        v-text="categoryName" />
     </div>
 
     <div class="c-category-questions">
-      <answer-question />
-      <answer-question />
-      <answer-question />
-      <answer-question />
+      <answer-question
+        v-for="(question, index) in questionsInCategory"
+        :key="index"
+        v-bind="question" />
     </div>
   </section>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AnswerQuestion from '@/components/answer/question.vue'
 
 export default {
   components: {
     AnswerQuestion
+  },
+
+  props: {
+    categoryName: {
+      type: String,
+      required: true
+    }
+  },
+
+  computed: {
+    ...mapState('survey', [
+      'questions'
+    ]),
+
+    questionsInCategory () {
+      return this.questions.filter(question => question.categoryName === this.categoryName)
+    }
   }
 }
 </script>

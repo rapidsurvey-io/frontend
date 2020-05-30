@@ -1,39 +1,30 @@
 <template>
   <section>
-    <answer-category />
-    <answer-category />
-    <modal
-      v-if="showQuestionBuilder"
-      header="Test Modal">
-      <template v-slot:header>
-        <div class="u-flex-container">
-          <h3 class="u-flex-grow">Ask a question</h3>
-          <c-icon icon="times" class="fa-fw u-pointer" @click="cancel" />
-        </div>
-      </template>
-    </modal>
+    <answer-category
+      v-for="(category, index) in categories"
+      :key="index"
+      :category-name="category" />
 
+    <question-builder />
     <ask-toolbar />
   </section>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import AnswerCategory from '@/components/answer/category.vue'
 import AskToolbar from '@/components/ask/toolbar.vue'
+import QuestionBuilder from '@/components/ask/question-builder.vue'
 
 export default {
   components: {
     AnswerCategory,
-    AskToolbar
+    AskToolbar,
+    QuestionBuilder
   },
 
-  computed: mapState('questionBuilder', {
-    showQuestionBuilder: 'show'
-  }),
-
-  methods: mapActions('questionBuilder', [
-    'cancel'
+  computed: mapGetters('survey', [
+    'categories'
   ])
 }
 </script>

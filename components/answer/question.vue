@@ -1,7 +1,11 @@
 <template>
   <div class="c-question c-question-wrapper">
-    <h3>Question Name</h3>
-    <p>Question Description</p>
+    <h3
+      v-text="questionName" />
+
+    <p
+      v-text="questionDescription" />
+
     <br>
     <question-choice />
     <question-choice />
@@ -15,6 +19,18 @@ import QuestionChoice from '@/components/answer/types/choice.vue'
 export default {
   components: {
     QuestionChoice
+  },
+
+  props: {
+    questionName: {
+      type: String,
+      required: true
+    },
+
+    questionDescription: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

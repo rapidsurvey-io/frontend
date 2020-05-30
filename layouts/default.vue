@@ -24,8 +24,7 @@ export default {
 
 <style lang="scss">
 html {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Karla', 'Source Sans Pro';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -34,6 +33,11 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: #EDEDED;
+}
+
+input, button, select, textarea, p {
+  font-family: 'Karla', 'Source Sans Pro';
+  font-size: 1rem;
 }
 
 *,
@@ -53,6 +57,12 @@ h1 {
 
 p {
   font-size: 1rem;
+}
+
+hr {
+  border: 1px solid #EDEDED;
+  margin: 5px 15px 5px 5px;
+  text-align: center;
 }
 
 .window {

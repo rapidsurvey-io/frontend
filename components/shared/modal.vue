@@ -2,11 +2,13 @@
   <overlay>
     <div class="c-modal">
       <div class="c-modal-header">
-        <slot name="header" />
+        <slot
+          name="header" />
       </div>
 
       <div class="c-modal-body">
-        <slot />
+        <slot
+          name="body" />
       </div>
     </div>
   </overlay>
@@ -14,13 +16,7 @@
 
 <script>
 export default {
-  name: 'Modal',
-  props: {
-    header: {
-      type: String,
-      required: true
-    }
-  }
+  name: 'Modal'
 }
 </script>
 
@@ -30,17 +26,24 @@ export default {
   top: 120px;
   left: 0;
   right: 0;
-  bottom: 0;
   margin: 0 auto;
   background-color: white;
   z-index: 20;
-  height: 500px;
   width: 600px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .c-modal-header {
   background-color: #E2E2E2;
-  padding: 20px;
+  padding: 15px 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.c-modal-body {
+  padding: 15px 20px;
+  height: 600px;
+  max-height: 90vh;
+  overflow: auto;
 }
 </style>
