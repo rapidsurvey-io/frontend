@@ -53,8 +53,16 @@
           <option value="1">Yes or No</option>
         </field-select>
 
+      <div class="c-questionBuilder-footer">
         <square-button
-          text="Next" />
+          text="Cancel"
+          :execute="cancel"
+          type="button" />
+
+         <square-button
+          text="Add Question"
+          is-primary />
+        </div>
       </form>
     </template>
   </modal>
@@ -121,3 +129,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.c-questionBuilder-footer {
+  text-align: right;
+  padding: 10px;
+}
+</style>

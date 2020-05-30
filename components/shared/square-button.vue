@@ -1,8 +1,9 @@
 <template>
   <button
     class="c-button"
-    type="submit"
-    @class="[{ 'u-primary': isPrimary }]">
+    :type="type"
+    @click="execute"
+    v-bind:class="[{ 'u-primary': isPrimary }]">
     <span
       v-text="text" />
   </button>
@@ -16,9 +17,20 @@ export default {
       type: String,
       default: 'Submit'
     },
+
     isPrimary: {
       type: Boolean,
       default: false
+    },
+
+    type: {
+      type: String,
+      default: 'Submit'
+    },
+
+    execute: {
+      type: Function,
+      default: () => { }
     }
   }
 }
@@ -28,8 +40,10 @@ export default {
 .c-button {
   display: inline-block;
   padding: 15px 20px;
-  background-color: #B2CDFF;
+  background-color: #EDEDED;
   cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid transparent;
 
   &.u-primary {
     background-color: #003FBA;

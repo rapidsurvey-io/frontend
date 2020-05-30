@@ -30,11 +30,13 @@ export default {
   background-color: white;
   z-index: 20;
   width: 600px;
+  max-width: 90%;
   border-radius: 10px;
 }
 
 .c-modal-header {
-  background-color: #E2E2E2;
+  background-color: #003FBA;
+  color: white;
   padding: 15px 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -42,7 +44,7 @@ export default {
 
 .c-modal-body {
   padding: 15px 20px;
-  height: 600px;
+  min-height: 500px;
   max-height: 90vh;
   overflow: auto;
 }

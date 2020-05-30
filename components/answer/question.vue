@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .c-question-wrapper {
     position: relative;
     width: 600px;
@@ -45,6 +45,15 @@ export default {
     min-height: 250px;
     background-color: white;
     z-index: 1;
+    border-radius: 10px;
+
+    @media (max-width: 1024px) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
   }
 
   .c-question {
