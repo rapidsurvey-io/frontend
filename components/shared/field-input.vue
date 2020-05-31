@@ -3,6 +3,7 @@
     <p
       class="c-input-label"
       v-text="label" />
+
     <input
       :required="isRequired"
       :value="model"

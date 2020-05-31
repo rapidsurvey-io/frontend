@@ -25,7 +25,7 @@ export default {
 
     type: {
       type: String,
-      default: 'Submit'
+      default: 'submit'
     },
 
     execute: {

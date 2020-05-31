@@ -89,7 +89,7 @@ export default {
       'showQuestionBuilder'
     ]),
 
-    ...mapGetters('survey', [
+    ...mapGetters('activeSurvey', [
       'categories'
     ])
   },
@@ -106,7 +106,7 @@ export default {
       'cancel'
     ]),
 
-    ...mapActions('survey', [
+    ...mapActions('activeSurvey', [
       'addQuestion'
     ]),
 

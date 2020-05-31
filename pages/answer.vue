@@ -23,7 +23,7 @@ export default {
     QuestionBuilder
   },
 
-  computed: mapGetters('survey', [
+  computed: mapGetters('activeSurvey', [
     'categories'
   ])
 }
