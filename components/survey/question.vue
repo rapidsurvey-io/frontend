@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import YesNoResponse from '@/components/answer/types/yesNo.vue'
+import YesNoResponse from '@/components/responses/yesNo.vue'
 
 export default {
   components: {

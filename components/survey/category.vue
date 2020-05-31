@@ -16,7 +16,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import AnswerQuestion from '@/components/answer/question.vue'
+import AnswerQuestion from '@/components/survey/question.vue'
 
 export default {
   components: {
@@ -59,6 +59,7 @@ export default {
     position: sticky;
     padding: 100px 30px 120px 30px;
     background-color: #E2E2E2;
+    border-radius: 10px;
 
     @media (max-width: 767px) {
       padding: 30px 30px 30px 30px;
@@ -68,7 +69,7 @@ export default {
   }
 
   .c-category-questions {
-    margin-top: -200px;
+    margin-top: -150px;
 
     @media (max-width: 767px) {
       margin-top: 0;

@@ -6,20 +6,17 @@
       :category-name="category" />
 
     <question-builder />
-    <ask-toolbar />
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import AnswerCategory from '@/components/answer/category.vue'
-import AskToolbar from '@/components/ask/toolbar.vue'
+import AnswerCategory from '@/components/survey/category.vue'
 import QuestionBuilder from '@/components/ask/question-builder.vue'
 
 export default {
   components: {
     AnswerCategory,
-    AskToolbar,
     QuestionBuilder
   },
 

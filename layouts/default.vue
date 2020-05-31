@@ -1,23 +1,19 @@
 <template>
-  <div class="c-layout">
-    <brand-navigator />
-    <div class="window">
-      <side-navigator />
-      <div class="pane">
-        <nuxt />
-      </div>
+  <div>
+    <main-navigator />
+
+    <div class="pane">
+      <nuxt />
     </div>
   </div>
 </template>
 
 <script>
-import brandNavigator from '~/components/navigation/brand-navigator.vue'
-import sideNavigator from '@/components/navigation/side-navigator.vue'
+import MainNavigator from '~/components/navigation/main-navigator.vue'
 
 export default {
   components: {
-    brandNavigator,
-    sideNavigator
+    MainNavigator
   }
 }
 </script>
@@ -65,12 +61,10 @@ hr {
   text-align: center;
 }
 
-.window {
-  display: flex;
-}
-
 .pane {
-  flex-grow: 1;
+  padding: 30px 0;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .u-pointer {

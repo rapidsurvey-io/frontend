@@ -4,10 +4,31 @@
   </nuxt-link>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .c-survey-list-item {
     display: block;
     padding: 20px 20px;
     text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease-in-out;
   }
+
+  .c-survey-list-item:nth-child(even) {
+  background-color: #F7F7F7;
+  border: 2px solid #EDEDED;
+
+  &:hover {
+    border: 2px solid #F7F7F7;
+  }
+}
+
+.c-survey-list-item:nth-child(odd) {
+  background-color: white;
+  border: 2px solid #EDEDED;
+
+  &:hover {
+    border: 2px solid white;
+  }
+}
 </style>

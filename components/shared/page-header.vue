@@ -1,12 +1,47 @@
 <template>
   <div class="c-page-header">
-    <slot />
+    <slot
+      name="heading" />
+
+    <div class="c-page-header-actions">
+      <slot
+        name="actions" />
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .c-page-header {
-    padding: 60px 30px 80px 30px;
+    position: relative;
+    padding: 50px 30px 80px 30px;
+    border-radius: 10px;
     background-color: #E2E2E2;
+    margin-bottom: 20px;
+  }
+
+  .c-page-header-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 30px;
+  }
+
+  .c-action {
+    display: inline-block;
+    background-color: #D3D3D3;
+    padding: 12px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background-color: #C4C4C4;
+    }
   }
 </style>

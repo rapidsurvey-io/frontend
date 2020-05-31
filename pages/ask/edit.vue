@@ -1,30 +1,52 @@
 <template>
   <section>
+    <page-header>
+      <template slot="heading">
+        <h1>My first survey</h1>
+        <p>This is an amazing, but as yet unfinished survey website.</p>
+      </template>
+      <template slot="actions">
+        <div class="c-action" @click="start">
+          <c-icon icon="plus" class="fa-fw" />
+          <span>Add Question</span>
+        </div>
+      </template>
+    </page-header>
+
     <answer-category
       v-for="(category, index) in categories"
       :key="index"
       :category-name="category" />
 
     <question-builder />
-    <ask-toolbar />
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import AnswerCategory from '@/components/answer/category.vue'
-import AskToolbar from '@/components/ask/toolbar.vue'
+import { mapState, mapGetters, mapActions } from 'vuex'
+import PageHeader from '@/components/shared/page-header.vue'
+import AnswerCategory from '@/components/survey/category.vue'
 import QuestionBuilder from '@/components/ask/question-builder.vue'
 
 export default {
   components: {
+    PageHeader,
     AnswerCategory,
-    AskToolbar,
     QuestionBuilder
   },
 
-  computed: mapGetters('activeSurvey', [
-    'categories'
+  computed: {
+    ...mapGetters('activeSurvey', [
+      'categories'
+    ]),
+
+    ...mapState('activeSurvey', [
+      'questions'
+    ])
+  },
+
+  methods: mapActions('questionBuilder', [
+    'start'
   ])
 }
 </script>
