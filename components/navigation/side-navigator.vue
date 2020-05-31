@@ -1,6 +1,8 @@
 <template>
-  <section class="c-side-navigator">
-    <navigator-link text="Ask a question" target="/ask" />
+  <section class="c-side-navigator u-hidden-mobile">
+    <navigator-link text="Ask" target="/ask" />
+    <navigator-link text="Answer" target="/answer" />
+    <navigator-link text="Analyse" target="/analyse" />
   </section>
 </template>
 

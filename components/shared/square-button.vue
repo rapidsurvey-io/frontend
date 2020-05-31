@@ -43,11 +43,19 @@ export default {
   background-color: #EDEDED;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid transparent;
+  border: 1px solid white;
+
+  &:hover {
+    border: 1px solid #EDEDED;
+  }
 
   &.u-primary {
     background-color: #003FBA;
     color: white;
+
+    &:hover {
+      border: 1px solid #003FBA;
+    }
   }
 }
 </style>

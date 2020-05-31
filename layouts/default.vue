@@ -2,7 +2,7 @@
   <div class="c-layout">
     <brand-navigator />
     <div class="window">
-      <side-navigator v-if="false" />
+      <side-navigator />
       <div class="pane">
         <nuxt />
       </div>
@@ -159,7 +159,7 @@ p.u-text-warning {
 
 .u-hidden-mobile {
   @media (max-width: 767px) {
-    display: none;
+    display: none !important;
   }
 }
 </style>

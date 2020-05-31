@@ -45,6 +45,7 @@ export default {
     width: 600px;
     max-width: 90%;
     margin: 0 auto;
+    margin-right: 120px;
     margin-bottom: 15px;
     min-height: 200px;
     background-color: white;
