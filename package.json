@@ -19,7 +19,8 @@
     "@nuxtjs/axios": "^5.10.3",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
-    "nuxt-webfontloader": "^1.1.0"
+    "nuxt-webfontloader": "^1.1.0",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

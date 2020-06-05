@@ -21,16 +21,16 @@ export default {
   .c-blank-survey-template {
     display: inline-block;
     width: 200px;
-    border: 1px solid #E2E2E2;
     background-color: white;
     padding: 10px;
     text-align: center;
     border-radius: 5px;
     margin: 5px;
     transition: all 0.2s ease-in-out;
+    border: 2px solid #EDEDED;
 
     &:hover {
-      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid white;
     }
   }
 

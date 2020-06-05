@@ -5,6 +5,8 @@ import SquareButton from '@/components/shared/square-button.vue'
 import FieldTextarea from '@/components/shared/field-textarea.vue'
 import FieldInput from '@/components/shared/field-input.vue'
 import FieldSelect from '@/components/shared/field-select.vue'
+import ActionWrapper from '@/components/shared/action-wrapper.vue'
+import IconButton from '@/components/shared/icon-button.vue'
 
 const sharedComponents = [
   Modal,
@@ -12,7 +14,9 @@ const sharedComponents = [
   SquareButton,
   FieldTextarea,
   FieldInput,
-  FieldSelect
+  FieldSelect,
+  ActionWrapper,
+  IconButton
 ]
 
 sharedComponents.forEach((component) => {

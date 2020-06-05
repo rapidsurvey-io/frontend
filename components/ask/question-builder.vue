@@ -71,6 +71,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+import generator from 'shortid'
 
 export default {
   data () {
@@ -112,6 +113,7 @@ export default {
 
     submitQuestion () {
       this.addQuestion({
+        questionId: generator.generate(),
         questionName: this.questionName,
         questionDescription: this.questionDescription,
         categoryName: this.categoryName,

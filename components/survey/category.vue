@@ -11,15 +11,19 @@
         :key="index"
         v-bind="question" />
     </div>
+
+    <category-toolbar :categoryName="categoryName"/>
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import CategoryToolbar from '@/components/ask/category-toolbar.vue'
 import AnswerQuestion from '@/components/survey/question.vue'
 
 export default {
   components: {
+    CategoryToolbar,
     AnswerQuestion
   },
 
@@ -53,13 +57,14 @@ export default {
   }
 
   .c-category-header {
-    top: 65px;
+    top: 85px;
     left: 0;
     right: 0;
     position: sticky;
     padding: 100px 30px 120px 30px;
     background-color: #E2E2E2;
     border-radius: 10px;
+    opacity: 0.9;
 
     @media (max-width: 767px) {
       padding: 30px 30px 30px 30px;

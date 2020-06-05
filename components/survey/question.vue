@@ -9,18 +9,26 @@
     <br>
 
     <yes-no-response v-if="responseType === '1'" />
+
+    <question-toolbar :question-id="questionId" />
   </div>
 </template>
 
 <script>
+import QuestionToolbar from '@/components/ask/question-toolbar.vue'
 import YesNoResponse from '@/components/responses/yesNo.vue'
 
 export default {
   components: {
+    QuestionToolbar,
     YesNoResponse
   },
 
   props: {
+    questionId: {
+      type: String,
+      required: true
+    },
     questionName: {
       type: String,
       required: true
