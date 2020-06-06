@@ -4,16 +4,18 @@
     <p>Pick a template below to get a new survey started fast</p>
 
     <blank-survey-template />
-    <blank-survey-template />
+    <ice-cream-survey-template />
   </section>
 </template>
 
 <script>
 import BlankSurveyTemplate from '@/components/templates/blank-survey-template.vue'
+import IceCreamSurveyTemplate from '@/components/templates/ice-cream-survey-template.vue'
 
 export default {
   components: {
-    BlankSurveyTemplate
+    BlankSurveyTemplate,
+    IceCreamSurveyTemplate
   }
 }
 </script>

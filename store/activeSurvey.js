@@ -9,6 +9,11 @@ export const getters = {
 }
 
 export const mutations = {
+  reset: (state) => {
+    state.questions = []
+    state.categorySettings = []
+  },
+
   addQuestion: (state, question) => {
     state.questions = [
       ...state.questions,
@@ -31,6 +36,14 @@ export const mutations = {
 }
 
 export const actions = {
+  startTemplate: ({ commit }, { questions }) => {
+    commit('reset')
+
+    questions.forEach((question) => {
+      commit('addQuestion', question)
+    })
+  },
+
   addQuestion: ({ commit }, question) => {
     commit('addQuestion', question)
   },
