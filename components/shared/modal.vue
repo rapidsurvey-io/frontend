@@ -21,11 +21,12 @@ export default {
 </script>
 
 <style scoped>
+.c-overlay {
+  display: flex;
+  align-items: center;
+}
+
 .c-modal {
-  position: fixed;
-  top: 120px;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   background-color: white;
   z-index: 20;
@@ -44,8 +45,8 @@ export default {
 
 .c-modal-body {
   padding: 15px 20px;
-  min-height: 500px;
-  max-height: 90vh;
+  min-height: 150px;
+  max-height: 80vh;
   overflow: auto;
 }
 </style>
