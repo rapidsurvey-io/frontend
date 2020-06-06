@@ -19,6 +19,7 @@
       :category-name="category" />
 
     <question-builder />
+    <category-builder />
   </section>
 </template>
 
@@ -27,12 +28,14 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import PageHeader from '@/components/shared/page-header.vue'
 import AnswerCategory from '@/components/survey/category.vue'
 import QuestionBuilder from '@/components/ask/question-builder.vue'
+import CategoryBuilder from '@/components/ask/category-builder.vue'
 
 export default {
   components: {
     PageHeader,
     AnswerCategory,
-    QuestionBuilder
+    QuestionBuilder,
+    CategoryBuilder
   },
 
   computed: {

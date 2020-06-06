@@ -1,5 +1,6 @@
 export const state = () => ({
-  questions: []
+  questions: [],
+  categorySettings: []
 })
 
 export const getters = {
@@ -19,6 +20,13 @@ export const mutations = {
   },
   deleteCategory: (state, categoryName) => {
     state.questions = state.questions.filter(question => question.categoryName !== categoryName)
+  },
+  updateCategoryName: (state, { oldCategoryName, newCategoryName }) => {
+    state.questions
+      .filter(question => question.categoryName === oldCategoryName)
+      .forEach((question) => {
+        question.categoryName = newCategoryName
+      })
   }
 }
 
@@ -31,5 +39,11 @@ export const actions = {
   },
   deleteCategory: ({ commit }, categoryName) => {
     commit('deleteCategory', categoryName)
+  },
+  updateCategoryName: ({ commit }, { oldCategoryName, newCategoryName }) => {
+    commit('updateCategoryName', {
+      oldCategoryName,
+      newCategoryName
+    })
   }
 }

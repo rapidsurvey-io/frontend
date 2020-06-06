@@ -1,10 +1,11 @@
 <template>
   <action-wrapper>
-    <!-- <icon-button icon="palette" />
-    <icon-button icon="wrench" /> -->
+    <span @click="showCategoryBuilder(categoryName)">
+      <icon-button icon="wrench" />
+    </span>
     <span @click="deleteCategory(categoryName)">
       <icon-button />
-      </span>
+    </span>
   </action-wrapper>
 </template>
 
@@ -19,8 +20,14 @@ export default {
     }
   },
 
-  methods: mapActions('activeSurvey', [
-    'deleteCategory'
-  ])
+  methods: {
+    ...mapActions('activeSurvey', [
+      'deleteCategory'
+    ]),
+
+    ...mapActions('categoryBuilder', [
+      'showCategoryBuilder'
+    ])
+  }
 }
 </script>

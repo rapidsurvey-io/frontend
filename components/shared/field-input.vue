@@ -7,6 +7,7 @@
     <input
       :required="isRequired"
       :value="model"
+      type="text"
       @input="updateValue($event.target.value)">
   </label>
 </template>

@@ -12,7 +12,8 @@
         v-bind="question" />
     </div>
 
-    <category-toolbar :categoryName="categoryName"/>
+    <category-toolbar
+      :category-name="categoryName" />
   </section>
 </template>
 
