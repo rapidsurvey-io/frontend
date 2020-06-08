@@ -5,6 +5,7 @@
       v-text="label" />
     <select
       :required="isRequired"
+      :value="model"
       @input="updateValue($event.target.value)">
       <slot />
     </select>
@@ -19,6 +20,11 @@ export default {
     label: {
       type: String,
       required: true
+    },
+
+    model: {
+      type: String,
+      default: ''
     },
 
     isRequired: {

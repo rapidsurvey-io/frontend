@@ -16,29 +16,9 @@
 
     <template v-slot:body>
       <form class="c-category-slide" @submit.prevent="submitQuestion">
-        <field-input
-          v-model="questionName"
-          label="What do you want to ask? (*)"
-          is-required />
-
-        <field-textarea
-          v-model="questionDescription"
-          label="Would you like to describe the question?" />
-
-        <hr>
-
-        <field-select
-          v-model="responseType"
-          label="How should the visitor respond?">
-          <option value="1">Yes or No</option>
-          <option value="2">Multiple Choice</option>
-          <option value="3">Free Text</option>
-        </field-select>
-
-        <hr>
-
         <field-select
           v-model="categorySelection"
+          :model="categorySelection"
           label="What category does the question belong too?">
           <option value="new">Create a new category</option>
           <option
@@ -54,6 +34,28 @@
           :model="categoryName"
           label="What do you want to call the category? (*)"
           is-required />
+
+        <hr>
+
+        <field-input
+          v-model="questionName"
+          label="What do you want to ask? (*)"
+          is-required />
+
+        <field-textarea
+          v-model="questionDescription"
+          label="Would you like to describe the question?" />
+
+        <hr>
+
+        <field-select
+          v-model="responseType"
+          :model="responseType"
+          label="How should the visitor respond?">
+          <option value="1">Yes or No</option>
+          <option value="2">Multiple Choice</option>
+          <option value="3">Free Text</option>
+        </field-select>
 
         <div class="c-questionBuilder-footer">
           <square-button
@@ -100,6 +102,11 @@ export default {
     categorySelection (value) {
       this.showCategoryNameField = (value === 'new')
       this.categoryName = value === 'new' ? '' : value
+    },
+    showQuestionBuilder (value) {
+      if (value === true && this.categories.size > 0) {
+        this.categorySelection = this.categories.values().next().value
+      }
     }
   },
 
@@ -123,10 +130,7 @@ export default {
 
       this.questionName = ''
       this.questionDescription = ''
-      this.categorySelection = 'new'
       this.categoryName = ''
-      this.responseType = '1'
-      this.showCategoryNameField = true
 
       this.cancel()
     }
