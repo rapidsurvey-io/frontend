@@ -8,21 +8,26 @@
 
     <br>
 
-    <yes-no-response
-      v-if="responseType === '1'" />
+    <div v-bind:class="[{'c-question-disabled' : isAskMode }]">
+      <yes-no-response
+        v-if="responseType === '1'" />
 
-    <free-text-response
-      v-if="responseType === '2'" />
+      <free-text-response
+        v-if="responseType === '2'" />
 
-    <dropdown-response
-      v-if="responseType === '3'"
-      :responses="responses" />
+      <dropdown-response
+        v-if="responseType === '3'"
+        :responses="responses" />
+    </div>
 
-    <question-toolbar :question-id="questionId" />
+    <question-toolbar
+      v-if="isAskMode"
+      :question-id="questionId" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import QuestionToolbar from '@/components/ask/toolbars/question-toolbar.vue'
 import YesNoResponse from '@/components/answer/responses/yesNo.vue'
 import FreeTextResponse from '@/components/answer/responses/freeText.vue'
@@ -61,6 +66,12 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+
+  computed: {
+    ...mapGetters('activeSurvey', [
+      'isAskMode'
+    ])
   }
 }
 </script>
@@ -92,6 +103,10 @@ export default {
 
   .c-question {
     padding: 30px;
+  }
+
+  .c-question-disabled {
+    pointer-events: none;
   }
 
   h3 {

@@ -13,12 +13,13 @@
     </div>
 
     <category-toolbar
+      v-if="isAskMode"
       :category-name="categoryName" />
   </section>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import CategoryToolbar from '@/components/ask/toolbars/category-toolbar.vue'
 import AnswerQuestion from '@/components/answer/question.vue'
 
@@ -38,6 +39,10 @@ export default {
   computed: {
     ...mapState('activeSurvey', [
       'questions'
+    ]),
+
+    ...mapGetters('activeSurvey', [
+      'isAskMode'
     ]),
 
     questionsInCategory () {

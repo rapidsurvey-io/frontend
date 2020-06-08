@@ -1,6 +1,7 @@
 <template>
   <field-select
     v-model="response"
+    :model="response"
     label="Pick one option">
     <option
       v-for="(choice, index) in responses"
@@ -15,7 +16,7 @@
 export default {
   props: {
     responses: {
-      type: Function,
+      type: Array,
       default: () => []
     }
   },

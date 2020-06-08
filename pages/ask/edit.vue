@@ -18,6 +18,7 @@
 
     <question-builder />
     <category-builder />
+    <sticky-footer message="You are viewing this survey in Ask mode" />
   </section>
 </template>
 

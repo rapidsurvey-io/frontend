@@ -1,11 +1,15 @@
 export const state = () => ({
+  mode: 'ask',
   questions: [],
   categorySettings: []
 })
 
 export const getters = {
   categories: ({ questions }) =>
-    new Set(questions.map(question => question.categoryName))
+    new Set(questions.map(question => question.categoryName)),
+
+  isAskMode: ({ mode }) =>
+    mode === 'ask'
 }
 
 export const mutations = {

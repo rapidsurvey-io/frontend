@@ -8,6 +8,7 @@ import FieldSelect from '@/components/shared/field-select.vue'
 import ActionWrapper from '@/components/shared/action-wrapper.vue'
 import IconButton from '@/components/shared/icon-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
+import StickyFooter from '@/components/shared/sticky-footer.vue'
 
 const sharedComponents = [
   Modal,
@@ -18,7 +19,8 @@ const sharedComponents = [
   FieldSelect,
   ActionWrapper,
   IconButton,
-  PageHeader
+  PageHeader,
+  StickyFooter
 ]
 
 sharedComponents.forEach((component) => {
