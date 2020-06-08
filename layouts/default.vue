@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-app>
     <main-navigator />
 
     <div class="pane">

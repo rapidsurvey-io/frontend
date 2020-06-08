@@ -1,9 +1,8 @@
 <template>
   <section class="c-category">
-    <div class="c-category-header">
-      <h2
-        v-text="categoryName" />
-    </div>
+    <h2
+      class="c-category-header"
+      v-text="categoryName" />
 
     <div class="c-category-questions">
       <answer-question

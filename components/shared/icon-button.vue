@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="c-icon-button u-pointer">
     <c-icon
       :icon="props.icon"

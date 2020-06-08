@@ -2,15 +2,8 @@
   <modal v-if="showQuestionBuilder">
     <template v-slot:header>
       <div class="u-flex-container">
-        <h3
-          class="u-flex-grow">
-          Ask a question
-        </h3>
-
-        <c-icon
-          icon="times"
-          class="fa-fw u-pointer"
-          @click="cancel" />
+        <h3 class="u-flex-grow">Ask a question</h3>
+        <c-icon icon="times" class="fa-fw u-pointer" @click="cancel" />
       </div>
     </template>
 

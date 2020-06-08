@@ -1,23 +1,14 @@
 <template>
   <div class="c-question c-question-wrapper">
-    <h3
-      v-text="questionName" />
-
-    <p
-      v-text="questionDescription" />
+    <h3 v-text="questionName" />
+    <p v-text="questionDescription" />
 
     <br>
 
     <div v-bind:class="[{'c-question-disabled' : isAskMode }]">
-      <yes-no-response
-        v-if="responseType === '1'" />
-
-      <free-text-response
-        v-if="responseType === '2'" />
-
-      <dropdown-response
-        v-if="responseType === '3'"
-        :responses="responses" />
+      <yes-no-response v-if="responseType === '1'" />
+      <free-text-response v-if="responseType === '2'" />
+      <dropdown-response v-if="responseType === '3'" :responses="responses" />
     </div>
 
     <question-toolbar

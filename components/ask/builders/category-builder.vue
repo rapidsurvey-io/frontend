@@ -3,11 +3,7 @@
     <template v-slot:header>
       <div class="u-flex-container">
         <h3 class="u-flex-grow">Edit Category</h3>
-
-        <c-icon
-          icon="times"
-          class="fa-fw u-pointer"
-          @click="cancelCategoryBuilder" />
+        <c-icon icon="times" class="fa-fw u-pointer" @click="cancelCategoryBuilder" />
       </div>
     </template>
 
