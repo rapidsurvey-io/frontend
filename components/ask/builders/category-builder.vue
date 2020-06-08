@@ -2,10 +2,7 @@
   <modal v-if="showCategoryBuilder">
     <template v-slot:header>
       <div class="u-flex-container">
-        <h3
-          class="u-flex-grow">
-          Edit Category
-        </h3>
+        <h3 class="u-flex-grow">Edit Category</h3>
 
         <c-icon
           icon="times"

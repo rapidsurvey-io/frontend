@@ -72,7 +72,7 @@ export default {
     max-width: 90%;
     margin: 0 auto;
     margin-right: 120px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     min-height: 150px;
     background-color: white;
     z-index: 1;

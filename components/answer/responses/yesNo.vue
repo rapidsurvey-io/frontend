@@ -1,12 +1,7 @@
 <template>
-  <div class="c-yesNo u-flex-stretch">
-    <div class="c-choice u-pointer">
-      <p>Yes</p>
-    </div>
-
-    <div class="c-choice u-pointer">
-      <p>No</p>
-    </div>
+  <div class="u-flex-stretch">
+    <p class="c-choice u-pointer">Yes</p>
+    <p class="c-choice u-pointer">No</p>
   </div>
 </template>
 

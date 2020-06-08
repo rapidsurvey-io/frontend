@@ -10,6 +10,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'PageHeader'
+}
+</script>
+
 <style scoped lang="scss">
   .c-page-header {
     position: relative;
@@ -25,23 +31,5 @@
     left: 0;
     right: 0;
     padding: 0 30px;
-  }
-
-  .c-action {
-    display: inline-block;
-    background-color: #D3D3D3;
-    padding: 12px 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-
-    svg {
-      margin-right: 5px;
-    }
-
-    &:hover {
-      background-color: #C4C4C4;
-    }
   }
 </style>

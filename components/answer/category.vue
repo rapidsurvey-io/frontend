@@ -52,13 +52,13 @@ export default {
     position: relative;
     margin-bottom: 100px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       margin-bottom: 20px;
     }
   }
 
   .c-category-header {
-    top: 85px;
+    top: 95px;
     left: 0;
     right: 0;
     position: sticky;
@@ -67,17 +67,19 @@ export default {
     border-radius: 10px;
     opacity: 0.9;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
+      top: 65px;
       padding: 30px 30px 30px 30px;
       z-index: 2;
       margin-bottom: 20px;
+      opacity: 1;
     }
   }
 
   .c-category-questions {
     margin-top: -150px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       margin-top: 0;
     }
   }

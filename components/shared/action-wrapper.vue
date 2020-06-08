@@ -25,6 +25,6 @@ export default {
     right: 8px;
     border: 1px solid white;
     top: 8px;
-    z-index: 40;
+    z-index: 5;
   }
 </style>
