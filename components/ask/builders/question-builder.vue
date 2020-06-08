@@ -32,6 +32,7 @@
           label="How should the visitor respond?">
           <option value="1">Yes or No</option>
           <option value="2">Multiple Choice</option>
+          <option value="3">Free Text</option>
         </field-select>
 
         <hr>

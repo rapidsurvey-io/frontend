@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SurveyTemplateSelector from '@/components/templates/survey-template-selector.vue'
+import SurveyTemplateSelector from '@/components/ask/templates/survey-template-selector.vue'
 import ExistingSurveySelector from '@/components/ask/existing-survey-selector.vue'
 
 export default {

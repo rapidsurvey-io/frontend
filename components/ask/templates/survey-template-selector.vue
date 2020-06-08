@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import BlankSurveyTemplate from '@/components/templates/blank-survey-template.vue'
-import IceCreamSurveyTemplate from '@/components/templates/ice-cream-survey-template.vue'
+import BlankSurveyTemplate from '@/components/ask/templates/blank-survey-template.vue'
+import IceCreamSurveyTemplate from '@/components/ask/templates/ice-cream-survey-template.vue'
 
 export default {
   components: {

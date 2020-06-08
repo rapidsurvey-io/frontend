@@ -1,5 +1,0 @@
-const YESNO_RESPONSE = 1
-
-export {
-  YESNO_RESPONSE
-}

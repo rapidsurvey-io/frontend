@@ -19,8 +19,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import CategoryToolbar from '@/components/ask/category-toolbar.vue'
-import AnswerQuestion from '@/components/survey/question.vue'
+import CategoryToolbar from '@/components/ask/toolbars/category-toolbar.vue'
+import AnswerQuestion from '@/components/answer/question.vue'
 
 export default {
   components: {

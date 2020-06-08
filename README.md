@@ -1,2 +1,6 @@
 # RapidSurvey.io
-> Create instant questions and surveys for free, privacy assured.
+> Create new surveys, fast and for free...
+
+This website is currently being developed and is in the early stages.
+
+**Current Stage**: Building UI/UX
