@@ -12,10 +12,10 @@
       v-if="responseType === '1'" />
 
     <free-text-response
-      v-if="responseType === '3'" />
+      v-if="responseType === '2'" />
 
     <dropdown-response
-      v-if="responseType === '4'"
+      v-if="responseType === '3'"
       :responses="responses" />
 
     <question-toolbar :question-id="questionId" />

@@ -26,13 +26,13 @@ export default {
         questionName: 'What is your favourite flavour?',
         questionDescription: 'Everybody has a favourite flavour, but what is yours?',
         categoryName: 'Your Preferences',
-        responseType: '3'
+        responseType: '2'
       },
       {
         questionId: generator.generate(),
         questionName: 'How do you prefer it served?',
         categoryName: 'Your Preferences',
-        responseType: '4',
+        responseType: '3',
         responses: [
           'In a Cone',
           'In a Bowl',
