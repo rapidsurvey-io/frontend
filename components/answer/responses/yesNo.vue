@@ -1,7 +1,7 @@
 <template>
   <div class="u-flex-stretch">
-    <p class="c-choice u-pointer">Yes</p>
-    <p class="c-choice u-pointer">No</p>
+    <p class="c-choice c-choice-yes u-pointer">Yes</p>
+    <p class="c-choice c-choice-no u-pointer">No</p>
   </div>
 </template>
 
@@ -16,7 +16,13 @@
   transition: all 0.1s ease-in-out;
 }
 
-.c-choice:hover {
-  border: 3px solid #E2E2E2;
+.c-choice-yes:hover {
+  border: 3px solid #77FF70;
+  background-color: #77FF70;
+}
+
+.c-choice-no:hover {
+  border: 3px solid #FF6060;
+  background-color: #FF6060;
 }
 </style>
