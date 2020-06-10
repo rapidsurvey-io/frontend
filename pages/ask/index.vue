@@ -3,6 +3,7 @@
     <div class="u-flex-grow">
       <page-header>
         <template slot="heading">
+          <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
           <h1>Welcome Back {{ $auth.user.given_name }}</h1>
           <p>Start a new Survey or edit an existing one below.</p>
         </template>
@@ -51,5 +52,13 @@ export default {
   height: 100%;
   padding-left: 10px;
   width: 300px;
+}
+
+.c-avatar {
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin-right: 30px;
+  border-radius: 50%;
 }
 </style>
