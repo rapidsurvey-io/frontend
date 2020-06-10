@@ -1,5 +1,7 @@
 export const state = () => ({
   mode: 'ask',
+  surveyTitle: 'Blank Survey',
+  surveyDescription: 'Click me to change the name and description of this survey',
   questions: [],
   categorySettings: []
 })

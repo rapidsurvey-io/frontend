@@ -12,7 +12,7 @@
         <field-select
           v-model="categorySelection"
           :model="categorySelection"
-          label="What category does the question belong too?">
+          label="Which category should the question belong too?">
           <option value="new">Create a new category</option>
           <option
             v-for="(selectedCategoryName, index) in categories"
@@ -48,6 +48,7 @@
           label="How should the visitor respond?">
           <option value="1">Yes or No</option>
           <option value="2">Free Text</option>
+          <option value="4">Multi-line text</option>
         </field-select>
 
         <div class="c-questionBuilder-footer">

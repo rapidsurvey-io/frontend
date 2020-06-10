@@ -2,8 +2,8 @@
   <section>
     <page-header>
       <template slot="heading">
-        <h1>My first survey</h1>
-        <p>This is an amazing, but as yet unfinished survey website.</p>
+        <h1 v-text="surveyTitle" />
+        <p v-text="surveyDescription" />
       </template>
 
       <template slot="actions">
@@ -42,6 +42,8 @@ export default {
     ]),
 
     ...mapState('activeSurvey', [
+      'surveyTitle',
+      'surveyDescription',
       'questions'
     ])
   },
