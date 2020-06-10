@@ -36,6 +36,7 @@
           is-required />
 
         <field-textarea
+          v-show="showDescriptionField"
           v-model="questionDescription"
           label="Would you like to describe the question?" />
 
@@ -76,7 +77,8 @@ export default {
       categorySelection: 'new',
       categoryName: '',
       responseType: '1',
-      showCategoryNameField: true
+      showCategoryNameField: true,
+      showDescriptionField: false
     }
   },
 
