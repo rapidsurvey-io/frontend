@@ -1,15 +1,18 @@
 <template>
   <section class="c-brand-navigator">
     <logo />
+    <auth />
   </section>
 </template>
 
 <script>
-import logo from '@/components/navigation/logo.vue'
+import Logo from '@/components/navigation/logo.vue'
+import Auth from '@/components/navigation/auth.vue'
 
 export default {
   components: {
-    logo
+    Logo,
+    Auth
   }
 }
 </script>
@@ -21,5 +24,6 @@ export default {
     background-color: #003FBA;
     padding: 10px 30px;
     z-index: 10;
+    height: 62px;
   }
 </style>

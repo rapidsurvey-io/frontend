@@ -45,6 +45,10 @@ export default {
     ...mapState('activeSurvey', [
       'questions'
     ])
-  }
+  },
+
+  middleware: [
+    'auth'
+  ]
 }
 </script>

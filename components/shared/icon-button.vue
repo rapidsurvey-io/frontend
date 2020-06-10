@@ -1,7 +1,7 @@
 <template>
   <div class="c-icon-button u-pointer">
     <c-icon
-      :icon="props.icon"
+      :icon="icon"
       class="fa-fw" />
   </div>
 </template>

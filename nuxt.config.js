@@ -1,4 +1,18 @@
 export default {
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/auth/signed-in'
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: 'typhoeus.eu.auth0.com',
+        client_id: '7fto0Sd9UzW1AykFOxjp57yPwYbm8ki8'
+      }
+    }
+  },
+
   buildModules: [
     '@nuxtjs/eslint-module'
   ],
@@ -37,6 +51,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/pwa',
     'nuxt-webfontloader'
   ],
