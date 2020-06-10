@@ -38,12 +38,13 @@ export default {
 
 .c-survey-template {
   display: inline-block;
-  min-width: 200px;
+  min-width: 150px;
   background-color: white;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
-  margin: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   transition: all 0.2s ease-in-out;
   border: 2px solid #EDEDED;
 
