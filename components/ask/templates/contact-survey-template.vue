@@ -41,7 +41,9 @@ export default {
         questionName: 'What message would you like to send?',
         categoryName: 'Your Message',
         responseType: '4'
-      }]
+      }],
+      surveyTitle: 'Contact Me',
+      surveyDescription: 'Click me to change the name and description of this survey...'
     }
   },
 
@@ -52,7 +54,9 @@ export default {
 
     create () {
       this.startTemplate({
-        questions: this.questions
+        questions: this.questions,
+        surveyTitle: this.surveyTitle,
+        surveyDescription: this.surveyDescription
       })
 
       this.$router.push({ path: 'ask/edit' })

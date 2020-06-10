@@ -38,7 +38,9 @@ export default {
           'In a Bowl',
           'Out of the Tub'
         ]
-      }]
+      }],
+      surveyTitle: 'Ice Cream Preferences',
+      surveyDescription: 'Click me to change the name and description of this survey...'
     }
   },
 
@@ -49,7 +51,9 @@ export default {
 
     create () {
       this.startTemplate({
-        questions: this.questions
+        questions: this.questions,
+        surveyTitle: this.surveyTitle,
+        surveyDescription: this.surveyDescription
       })
 
       this.$router.push({ path: 'ask/edit' })

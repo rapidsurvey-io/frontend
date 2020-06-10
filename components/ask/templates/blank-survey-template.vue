@@ -13,7 +13,9 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
-      questions: []
+      questions: [],
+      surveyTitle: 'Blank Survey',
+      surveyDescription: 'Click me to change the name and description of this survey...'
     }
   },
 
@@ -24,7 +26,9 @@ export default {
 
     create () {
       this.startTemplate({
-        questions: this.questions
+        questions: this.questions,
+        surveyTitle: this.surveyTitle,
+        surveyDescription: this.surveyDescription
       })
 
       this.$router.push({ path: 'ask/edit' })
