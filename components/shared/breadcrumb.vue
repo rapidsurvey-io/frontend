@@ -30,12 +30,11 @@ export default {
     align-items: center;
     background-color: #E2E2E2;
     border-radius: 10px;
-    margin-bottom: 10px;
   }
 
   .c-breadcrumb-inner {
     width: 95%;
-    padding: 15px 0;
+    padding: 17.5px 0;
     margin: 0 auto;
   }
 
