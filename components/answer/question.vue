@@ -9,6 +9,7 @@
       <yes-no-response v-if="responseType === '1'" />
       <free-text-response v-if="responseType === '2'" />
       <dropdown-response v-if="responseType === '3'" :responses="responses" />
+      <multiline-text-response v-if="responseType === '4'" />
     </div>
 
     <question-toolbar
@@ -23,13 +24,15 @@ import QuestionToolbar from '@/components/ask/toolbars/question-toolbar.vue'
 import YesNoResponse from '@/components/answer/responses/yesNo.vue'
 import FreeTextResponse from '@/components/answer/responses/freeText.vue'
 import DropdownResponse from '@/components/answer/responses/dropdown.vue'
+import MultilineTextResponse from '@/components/answer/responses/multilineText.vue'
 
 export default {
   components: {
     QuestionToolbar,
     YesNoResponse,
     FreeTextResponse,
-    DropdownResponse
+    DropdownResponse,
+    MultilineTextResponse
   },
 
   props: {

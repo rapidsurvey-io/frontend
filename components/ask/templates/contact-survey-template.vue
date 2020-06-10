@@ -2,8 +2,8 @@
   <div
     class="c-survey-template u-pointer"
     @click="create">
-    <c-icon icon="ice-cream" class="fa-fw mr" />
-    <span>Ice Cream Preferences</span>
+    <c-icon icon="envelope" class="fa-fw mr" />
+    <span>Contact Form</span>
   </div>
 </template>
 
@@ -16,28 +16,31 @@ export default {
     return {
       questions: [{
         questionId: generator.generate(),
-        questionName: 'Do you like Ice Cream?',
+        questionName: 'What is your email address?',
         questionDescription: '',
-        categoryName: 'Your Preferences',
-        responseType: '1'
-      },
-      {
-        questionId: generator.generate(),
-        questionName: 'What is your favourite flavour?',
-        questionDescription: 'Everybody has a favourite flavour, but what is yours?',
-        categoryName: 'Your Preferences',
+        categoryName: 'Your Details',
         responseType: '2'
       },
       {
         questionId: generator.generate(),
-        questionName: 'How do you prefer it served?',
-        categoryName: 'Your Preferences',
+        questionName: 'Do you want a response?',
+        questionDescription: '',
+        categoryName: 'Your Details',
+        responseType: '1'
+      },
+      {
+        questionId: generator.generate(),
+        questionName: 'What is the nature of your message?',
+        questionDescription: '',
+        categoryName: 'Your Message',
         responseType: '3',
-        responses: [
-          'In a Cone',
-          'In a Bowl',
-          'Out of the Tub'
-        ]
+        responses: ['General Chat', 'Business', 'Other']
+      },
+      {
+        questionId: generator.generate(),
+        questionName: 'What message would you like to send?',
+        categoryName: 'Your Message',
+        responseType: '4'
       }]
     }
   },

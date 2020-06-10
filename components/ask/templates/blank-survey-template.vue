@@ -1,9 +1,9 @@
 <template>
   <div
-    class="c-blank-survey-template u-pointer"
+    class="c-survey-template u-pointer"
     @click="create">
-    <div class="c-blank-survey-template-spacer" />
-    <p>Blank survey</p>
+    <c-icon icon="file" class="fa-fw mr" />
+    <span>Blank survey</span>
   </div>
 </template>
 
@@ -32,25 +32,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  .c-blank-survey-template {
-    display: inline-block;
-    width: 200px;
-    background-color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 5px;
-    transition: all 0.2s ease-in-out;
-    border: 2px solid #EDEDED;
-
-    &:hover {
-      border: 2px solid white;
-    }
-  }
-
-  .c-blank-survey-template-spacer {
-    height: 125px;
-  }
-</style>
