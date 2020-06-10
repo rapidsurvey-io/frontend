@@ -47,6 +47,10 @@ export default {
     ])
   },
 
+  created () {
+    this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Ask', href: '/ask' }, { icon: 'poll', title: 'Edit Survey', href: '/ask/edit' }])
+  },
+
   middleware: [
     'auth'
   ]

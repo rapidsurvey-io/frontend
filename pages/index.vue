@@ -9,3 +9,11 @@
     </template>
   </page-header>
 </template>
+
+<script>
+export default {
+  created () {
+    this.$store.dispatch('breadcrumb/set', [])
+  }
+}
+</script>

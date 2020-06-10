@@ -9,6 +9,7 @@ import ActionWrapper from '@/components/shared/action-wrapper.vue'
 import IconButton from '@/components/shared/icon-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
 import StickyFooter from '@/components/shared/sticky-footer.vue'
+import Breadcrumb from '@/components/shared/breadcrumb.vue'
 
 const sharedComponents = [
   Modal,
@@ -20,7 +21,8 @@ const sharedComponents = [
   ActionWrapper,
   IconButton,
   PageHeader,
-  StickyFooter
+  StickyFooter,
+  Breadcrumb
 ]
 
 sharedComponents.forEach((component) => {

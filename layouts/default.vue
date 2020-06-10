@@ -1,6 +1,7 @@
 <template>
   <div data-app>
     <main-navigator />
+    <breadcrumb />
 
     <div class="pane">
       <nuxt />

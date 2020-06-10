@@ -22,6 +22,10 @@ export default {
     ExistingSurveySelector
   },
 
+  created () {
+    this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Ask', href: '/ask' }])
+  },
+
   middleware: [
     'auth'
   ]
