@@ -23,6 +23,7 @@ export default {
     border-radius: 10px;
     background-color: #E2E2E2;
     margin-bottom: 20px;
+    min-height: 215px;
   }
 
   .c-page-header-actions {
