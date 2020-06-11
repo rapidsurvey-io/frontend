@@ -1,8 +1,12 @@
 <template>
   <section class="c-category">
-    <h2
-      class="c-category-header"
-      v-text="categoryName" />
+    <div class="c-category-header">
+      <h2
+        v-text="categoryName" />
+      <p
+        v-if="category"
+        v-text="category.categoryDescription" />
+    </div>
 
     <div class="c-category-questions">
       <answer-question
@@ -12,13 +16,12 @@
     </div>
 
     <category-toolbar
-      v-if="isAskMode"
       :category-name="categoryName" />
   </section>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import CategoryToolbar from '@/components/ask/toolbars/category-toolbar.vue'
 import AnswerQuestion from '@/components/answer/question.vue'
 
@@ -37,15 +40,16 @@ export default {
 
   computed: {
     ...mapState('activeSurvey', [
-      'questions'
-    ]),
-
-    ...mapGetters('activeSurvey', [
-      'isAskMode'
+      'questions',
+      'categories'
     ]),
 
     questionsInCategory () {
       return this.questions.filter(question => question.categoryName === this.categoryName)
+    },
+
+    category () {
+      return this.categories.find(category => category.categoryName === this.categoryName)
     }
   }
 }

@@ -15,6 +15,10 @@
           label="What do you want to call the category?"
           is-required />
 
+        <field-textarea
+          v-model="newCategoryDescription"
+          label="Would you like to describe the category?" />
+
         <div class="c-categoryBuilder-footer">
           <square-button
             text="Cancel"
@@ -36,7 +40,8 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      newCategoryName: ''
+      newCategoryName: '',
+      newCategoryDescription: ''
     }
   },
 
@@ -58,13 +63,14 @@ export default {
 
     ...mapActions('activeSurvey', [
       'addQuestion',
-      'updateCategoryName'
+      'updateCategory'
     ]),
 
     submit () {
-      this.updateCategoryName({
+      this.updateCategory({
         oldCategoryName: this.categoryName,
-        newCategoryName: this.newCategoryName
+        newCategoryName: this.newCategoryName,
+        newCategoryDescription: this.newCategoryDescription
       })
 
       this.cancelCategoryBuilder()

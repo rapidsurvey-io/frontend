@@ -1,23 +1,19 @@
 export const state = () => ({
-  mode: 'ask',
   surveyTitle: 'Blank Survey',
   surveyDescription: 'Click me to change the name and description of this survey',
   questions: [],
-  categorySettings: []
+  categories: []
 })
 
 export const getters = {
   categories: ({ questions }) =>
-    new Set(questions.map(question => question.categoryName)),
-
-  isAskMode: ({ mode }) =>
-    mode === 'ask'
+    new Set(questions.map(question => question.categoryName))
 }
 
 export const mutations = {
   reset: (state) => {
     state.questions = []
-    state.categorySettings = []
+    state.categories = []
   },
 
   addQuestion: (state, question) => {
@@ -38,12 +34,20 @@ export const mutations = {
   setSurveyDescription: (state, surveyDescription) => {
     state.surveyDescription = surveyDescription
   },
-  updateCategoryName: (state, { oldCategoryName, newCategoryName }) => {
+  updateCategory: (state, { oldCategoryName, newCategoryName, newCategoryDescription }) => {
     state.questions
       .filter(question => question.categoryName === oldCategoryName)
       .forEach((question) => {
         question.categoryName = newCategoryName
       })
+
+    state.categories = state.categories
+      .filter(category => category.categoryName !== oldCategoryName)
+
+    state.categories.push({
+      categoryName: newCategoryName,
+      categoryDescription: newCategoryDescription
+    })
   }
 }
 
@@ -67,10 +71,11 @@ export const actions = {
   deleteCategory: ({ commit }, categoryName) => {
     commit('deleteCategory', categoryName)
   },
-  updateCategoryName: ({ commit }, { oldCategoryName, newCategoryName }) => {
-    commit('updateCategoryName', {
+  updateCategory: ({ commit }, { oldCategoryName, newCategoryName, newCategoryDescription }) => {
+    commit('updateCategory', {
       oldCategoryName,
-      newCategoryName
+      newCategoryName,
+      newCategoryDescription
     })
   }
 }
