@@ -26,7 +26,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import SurveyListItem from '@/components/ask/survey-list-item.vue'
+import SurveyListItem from '@/components/dashboard/survey-list-item.vue'
 
 export default {
   components: {

@@ -19,7 +19,7 @@
 
 <script>
 import SurveyTemplateSelector from '@/components/ask/templates/survey-template-selector.vue'
-import ExistingSurveySelector from '@/components/ask/existing-survey-selector.vue'
+import ExistingSurveySelector from '@/components/dashboard/existing-survey-selector.vue'
 import EventsHeader from '@/components/events/events-header.vue'
 
 export default {
