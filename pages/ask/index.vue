@@ -19,6 +19,8 @@
     <question-builder />
     <category-builder
       v-if="showCategoryBuilder" />
+
+    <ask-footer />
   </section>
 </template>
 
@@ -28,13 +30,15 @@ import SurveyToolbar from '@/components/ask/toolbars/survey-toolbar.vue'
 import AnswerCategory from '@/components/answer/category.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
+import AskFooter from '@/components/ask/ask-footer.vue'
 
 export default {
   components: {
     SurveyToolbar,
     AnswerCategory,
     QuestionBuilder,
-    CategoryBuilder
+    CategoryBuilder,
+    AskFooter
   },
 
   computed: {

@@ -71,6 +71,14 @@ export default {
     @media (max-width: 768px) {
       padding-bottom: 20px;
     }
+
+    &::last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .c-category:last-of-type {
+    padding-bottom: 0 !important;
   }
 
   .c-category-header {

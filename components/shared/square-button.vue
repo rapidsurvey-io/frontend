@@ -2,7 +2,7 @@
   <button
     class="c-button"
     :type="type"
-    v-bind:class="[{ 'u-primary': isPrimary }]"
+    v-bind:class="[{ 'u-primary': isPrimary }, { 'c-button-white' : isWhite }]"
     @click="execute">
     <span
       v-text="text" />
@@ -19,6 +19,11 @@ export default {
     },
 
     isPrimary: {
+      type: Boolean,
+      default: false
+    },
+
+    isWhite: {
       type: Boolean,
       default: false
     },
@@ -55,6 +60,15 @@ export default {
 
     &:hover {
       border: 1px solid #003FBA;
+    }
+  }
+
+  &.c-button-white {
+    background-color: white;
+    border: 1px solid #EDEDED;
+
+    &:hover {
+      border: 1px solid white;
     }
   }
 }
