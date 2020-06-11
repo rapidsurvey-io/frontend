@@ -18,6 +18,11 @@
         v-model="newCategoryDescription"
         :model="newCategoryDescription"
         label="Would you like to describe the category?" />
+
+      <field-colour-picker
+        v-model="newColour"
+        :model="newColour"
+        label="Choose a category background colour" />
     </template>
 
     <template v-slot:footer>
@@ -40,18 +45,21 @@ export default {
   data () {
     return {
       newCategoryName: '',
-      newCategoryDescription: ''
+      newCategoryDescription: '',
+      newColour: ''
     }
   },
 
   computed: mapState('categoryBuilder', [
     'categoryName',
-    'categoryDescription'
+    'categoryDescription',
+    'colourCode'
   ]),
 
   mounted () {
     this.newCategoryName = this.categoryName
     this.newCategoryDescription = this.categoryDescription
+    this.newColour = this.colourCode
   },
 
   methods: {
@@ -67,7 +75,8 @@ export default {
       this.updateCategory({
         oldCategoryName: this.categoryName,
         newCategoryName: this.newCategoryName,
-        newCategoryDescription: this.newCategoryDescription
+        newCategoryDescription: this.newCategoryDescription,
+        colourCode: this.newColour
       })
 
       this.cancelCategoryBuilder()

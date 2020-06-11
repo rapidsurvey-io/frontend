@@ -5,6 +5,7 @@ import SquareButton from '@/components/shared/square-button.vue'
 import FieldTextarea from '@/components/shared/field-textarea.vue'
 import FieldInput from '@/components/shared/field-input.vue'
 import FieldSelect from '@/components/shared/field-select.vue'
+import FieldColourPicker from '@/components/shared/field-colour-picker.vue'
 import ActionWrapper from '@/components/shared/action-wrapper.vue'
 import IconButton from '@/components/shared/icon-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
@@ -18,6 +19,7 @@ const sharedComponents = [
   FieldTextarea,
   FieldInput,
   FieldSelect,
+  FieldColourPicker,
   ActionWrapper,
   IconButton,
   PageHeader,

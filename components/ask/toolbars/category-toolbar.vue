@@ -30,7 +30,8 @@ export default {
 
       return {
         categoryName: category?.categoryName || this.categoryName,
-        categoryDescription: category?.categoryDescription || ''
+        categoryDescription: category?.categoryDescription || '',
+        colourCode: category?.colourCode || 'gray'
       }
     }
   },

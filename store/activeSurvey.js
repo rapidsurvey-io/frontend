@@ -34,7 +34,7 @@ export const mutations = {
   setSurveyDescription: (state, surveyDescription) => {
     state.surveyDescription = surveyDescription
   },
-  updateCategory: (state, { oldCategoryName, newCategoryName, newCategoryDescription }) => {
+  updateCategory: (state, { oldCategoryName, newCategoryName, newCategoryDescription, colourCode }) => {
     state.questions
       .filter(question => question.categoryName === oldCategoryName)
       .forEach((question) => {
@@ -46,7 +46,8 @@ export const mutations = {
 
     state.categories.push({
       categoryName: newCategoryName,
-      categoryDescription: newCategoryDescription
+      categoryDescription: newCategoryDescription,
+      colourCode
     })
   }
 }
@@ -71,11 +72,12 @@ export const actions = {
   deleteCategory: ({ commit }, categoryName) => {
     commit('deleteCategory', categoryName)
   },
-  updateCategory: ({ commit }, { oldCategoryName, newCategoryName, newCategoryDescription }) => {
+  updateCategory: ({ commit }, { oldCategoryName, newCategoryName, newCategoryDescription, colourCode }) => {
     commit('updateCategory', {
       oldCategoryName,
       newCategoryName,
-      newCategoryDescription
+      newCategoryDescription,
+      colourCode
     })
   }
 }

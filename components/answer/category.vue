@@ -1,6 +1,6 @@
 <template>
   <section class="c-category">
-    <div class="c-category-header">
+    <div :class="`c-category-header ${categoryColour}`">
       <h2
         v-text="categoryName" />
       <p
@@ -50,6 +50,12 @@ export default {
 
     category () {
       return this.categories.find(category => category.categoryName === this.categoryName)
+    },
+
+    categoryColour () {
+      return (this.category)
+        ? this.category.colourCode
+        : 'gray'
     }
   }
 }
@@ -74,6 +80,22 @@ export default {
     background-color: #E2E2E2;
     border-radius: 10px;
     opacity: 0.9;
+
+    &.gray {
+      background-color: #E2E2E2;
+    }
+
+    &.red {
+      background-color: #FE5F55;
+    }
+
+    &.blue {
+      background-color: #7796CB;
+    }
+
+    &.green {
+      background-color: #87B38D;
+    }
 
     @media (max-width: 768px) {
       top: 65px;
