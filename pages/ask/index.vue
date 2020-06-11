@@ -1,40 +1,60 @@
 <template>
-  <div class="u-flex-normal">
-    <div class="u-flex-grow">
-      <page-header>
-        <template slot="heading">
-          <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
-          <h1>Welcome Back {{ $auth.user.given_name }}</h1>
-          <p>Start a new Survey or edit an existing one below.</p>
-        </template>
-      </page-header>
+  <section>
+    <page-header>
+      <template slot="heading">
+        <h1 v-text="surveyTitle" />
+        <p v-text="surveyDescription" />
+      </template>
 
-      <survey-template-selector />
-      <existing-survey-selector />
-    </div>
-    <div class="c-events">
-      <page-header>
-        <template slot="heading">
-          <h2>Recent Events</h2>
-          <p>Start a new Survey or edit an existing one below.</p>
-        </template>
-      </page-header>
-    </div>
-  </div>
+      <template slot="actions">
+        <survey-toolbar />
+      </template>
+    </page-header>
+
+    <answer-category
+      v-for="(category, index) in categories"
+      :key="index"
+      :category-name="category" />
+
+    <question-builder />
+    <category-builder
+      v-if="showCategoryBuilder" />
+  </section>
 </template>
 
 <script>
-import SurveyTemplateSelector from '@/components/ask/templates/survey-template-selector.vue'
-import ExistingSurveySelector from '@/components/ask/existing-survey-selector.vue'
+import { mapState, mapGetters } from 'vuex'
+import SurveyToolbar from '@/components/ask/toolbars/survey-toolbar.vue'
+import AnswerCategory from '@/components/answer/category.vue'
+import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
+import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
 
 export default {
   components: {
-    SurveyTemplateSelector,
-    ExistingSurveySelector
+    SurveyToolbar,
+    AnswerCategory,
+    QuestionBuilder,
+    CategoryBuilder
+  },
+
+  computed: {
+    ...mapGetters('activeSurvey', [
+      'categories'
+    ]),
+
+    ...mapState('activeSurvey', [
+      'surveyTitle',
+      'surveyDescription',
+      'questions'
+    ]),
+
+    ...mapState('categoryBuilder', [
+      'showCategoryBuilder'
+    ])
   },
 
   created () {
-    this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Ask', href: '/ask' }])
+    this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Dashboard', href: '/dashboard' }, { icon: 'poll', title: 'Edit Survey', href: '/ask' }])
   },
 
   middleware: [
@@ -42,23 +62,3 @@ export default {
   ]
 }
 </script>
-
-<style scoped>
-.u-flex-normal {
-  display: flex;
-}
-
-.c-events {
-  height: 100%;
-  padding-left: 10px;
-  width: 300px;
-}
-
-.c-avatar {
-  float: left;
-  height: 100px;
-  width: 100px;
-  margin-right: 30px;
-  border-radius: 50%;
-}
-</style>

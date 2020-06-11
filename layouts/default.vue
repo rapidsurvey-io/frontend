@@ -63,9 +63,11 @@ hr {
 }
 
 .pane {
-  padding: 30px 0;
-  width: 95%;
-  margin: 0 auto;
+  padding: 20px;
+
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
 }
 
 .u-pointer {

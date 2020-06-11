@@ -40,7 +40,7 @@ export default {
   display: inline-block;
   min-width: 150px;
   background-color: white;
-  padding: 10px;
+  padding: 15px 20px;
   text-align: center;
   border-radius: 10px;
   margin-right: 5px;

@@ -56,7 +56,7 @@ export default {
         surveyDescription: this.surveyDescription
       })
 
-      this.$router.push({ path: 'ask/edit' })
+      this.$router.push({ path: 'ask' })
     }
   }
 }
