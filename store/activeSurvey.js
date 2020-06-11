@@ -34,6 +34,9 @@ export const mutations = {
   setSurveyDescription: (state, surveyDescription) => {
     state.surveyDescription = surveyDescription
   },
+  setCategories: (state, categories) => {
+    state.categories = categories
+  },
   updateCategory: (state, { oldCategoryName, newCategoryName, newCategoryDescription, colourCode }) => {
     state.questions
       .filter(question => question.categoryName === oldCategoryName)
@@ -53,11 +56,11 @@ export const mutations = {
 }
 
 export const actions = {
-  startTemplate: ({ commit }, { questions, surveyTitle, surveyDescription }) => {
+  startTemplate: ({ commit }, { questions, surveyTitle, surveyDescription, categories }) => {
     commit('reset')
     commit('setSurveyTitle', surveyTitle)
     commit('setSurveyDescription', surveyDescription)
-
+    commit('setCategories', categories)
     questions.forEach((question) => {
       commit('addQuestion', question)
     })

@@ -50,7 +50,17 @@ export default {
         responseType: '4'
       }],
       surveyTitle: 'Contact Me',
-      surveyDescription: 'Click me to change the name and description of this survey...'
+      surveyDescription: 'Click me to change the name and description of this survey...',
+      categories: [{
+        categoryName: 'Your Details',
+        categoryDescription: 'Let me know who you are and how I should get back to you...',
+        colourCode: 'blue'
+      },
+      {
+        categoryName: 'Your Message',
+        categoryDescription: 'What do you want to talk about?',
+        colourCode: 'blue'
+      }]
     }
   },
 
@@ -63,7 +73,8 @@ export default {
       this.startTemplate({
         questions: this.questions,
         surveyTitle: this.surveyTitle,
-        surveyDescription: this.surveyDescription
+        surveyDescription: this.surveyDescription,
+        categories: this.categories
       })
 
       this.$router.push({ path: 'ask' })

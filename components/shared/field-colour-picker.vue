@@ -70,7 +70,7 @@ export default {
   }
 
   &.blue {
-    background-color: #7796CB;
+    background-color: #003FBA;
   }
 
   &.green {

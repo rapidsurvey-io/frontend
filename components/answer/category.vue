@@ -1,11 +1,13 @@
 <template>
   <section class="c-category">
     <div :class="`c-category-header ${categoryColour}`">
-      <h2
-        v-text="categoryName" />
-      <p
-        v-if="category"
-        v-text="category.categoryDescription" />
+      <div class="c-category-header-inner">
+        <h2
+          v-text="categoryName" />
+        <p
+          v-if="category"
+          v-text="category.categoryDescription" />
+      </div>
     </div>
 
     <div class="c-category-questions">
@@ -90,7 +92,8 @@ export default {
     }
 
     &.blue {
-      background-color: #7796CB;
+      background-color: #003FBA;
+      color: white;
     }
 
     &.green {
@@ -103,6 +106,14 @@ export default {
       z-index: 2;
       margin-bottom: 20px;
       opacity: 1;
+    }
+  }
+
+  .c-category-header-inner {
+    max-width: 275px;
+
+    @media (max-width: 768px) {
+      max-width: none;
     }
   }
 
