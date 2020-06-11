@@ -22,7 +22,7 @@ export default {
         QuestionModelGenerator('Your Message', 'What is the nature of your message?', '', '3', ['General Chat', 'Business', 'Other']),
         QuestionModelGenerator('Your Message', 'What message would you like to send?', '', '4')
       ],
-      surveyTitle: 'Contact Me',
+      surveyName: 'Contact Me',
       surveyDescription: 'Click me to change the name and description of this survey...',
       categories: [
         CategoryModelGenerator('Your Details', 'Let me know who you are and how I should get back to you...', 'blue'),
@@ -39,7 +39,7 @@ export default {
     create () {
       this.startTemplate({
         questions: this.questions,
-        surveyTitle: this.surveyTitle,
+        surveyName: this.surveyName,
         surveyDescription: this.surveyDescription,
         categories: this.categories
       })

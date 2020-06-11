@@ -2,7 +2,7 @@
   <section>
     <page-header :has-actions="true">
       <template slot="heading">
-        <h1 v-text="surveyTitle" />
+        <h1 v-text="surveyName" />
         <p v-text="surveyDescription" />
       </template>
 
@@ -43,7 +43,7 @@ export default {
     ]),
 
     ...mapState('activeSurvey', [
-      'surveyTitle',
+      'surveyName',
       'surveyDescription',
       'questions'
     ]),

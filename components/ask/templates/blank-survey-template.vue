@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       questions: [],
-      surveyTitle: 'Blank Survey',
+      surveyName: 'Blank Survey',
       surveyDescription: 'Click me to change the name and description of this survey...'
     }
   },
@@ -27,7 +27,7 @@ export default {
     create () {
       this.startTemplate({
         questions: this.questions,
-        surveyTitle: this.surveyTitle,
+        surveyName: this.surveyName,
         surveyDescription: this.surveyDescription
       })
 
