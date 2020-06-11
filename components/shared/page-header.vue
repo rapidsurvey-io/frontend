@@ -1,5 +1,5 @@
 <template>
-  <div class="c-page-header">
+  <div :class="`c-page-header ${hasActions ? 'u-has-actions' : ''}`">
     <slot
       name="heading" />
 
@@ -12,18 +12,29 @@
 
 <script>
 export default {
-  name: 'PageHeader'
+  name: 'PageHeader',
+
+  props: {
+    hasActions: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
   .c-page-header {
     position: relative;
-    padding: 50px 30px 80px 30px;
+    padding: 50px 30px;
     border-radius: 10px;
     background-color: #E2E2E2;
     margin-bottom: 20px;
-    min-height: 215px;
+    min-height: 185px;
+
+    &.u-has-actions {
+      padding-bottom: 80px;
+    }
   }
 
   .c-page-header-actions {

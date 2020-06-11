@@ -64,10 +64,10 @@ export default {
 <style scoped lang="scss">
   .c-category {
     position: relative;
-    margin-bottom: 100px;
+    padding-bottom: 50px;
 
     @media (max-width: 768px) {
-      margin-bottom: 20px;
+      padding-bottom: 20px;
     }
   }
 

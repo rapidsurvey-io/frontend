@@ -1,6 +1,6 @@
 <template>
   <section>
-    <page-header>
+    <page-header :has-actions="true">
       <template slot="heading">
         <h1 v-text="surveyTitle" />
         <p v-text="surveyDescription" />

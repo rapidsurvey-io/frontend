@@ -21,7 +21,7 @@
       <button
         type="button"
         class="c-auth-button c-auth-button--profile"
-        @click="$router.push('/ask')">
+        @click="$router.push('/dashboard')">
         <img class="c-auth-avatar" :src="$auth.user.picture">
         <span v-text="$auth.user.given_name" />
       </button>
