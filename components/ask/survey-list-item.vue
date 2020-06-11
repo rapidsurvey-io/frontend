@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/ask/edit" class="c-survey-list-item u-flex-container">
+  <nuxt-link to="/ask" class="c-survey-list-item u-flex-container">
     <p class="u-grow">Survey one</p>
   </nuxt-link>
 </template>
@@ -9,8 +9,9 @@
     display: block;
     padding: 20px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #EDEDED;
+    margin-bottom: 5px;
     transition: all 0.2s ease-in-out;
   }
 

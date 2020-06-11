@@ -1,7 +1,7 @@
 <template>
   <section class="c-survey-template-selector">
     <h2>Start a new Survey</h2>
-    <p>Pick a template below to get a new survey started fast</p>
+    <p>Pick a template below to start a new survey, or select blank if you want to start from scratch.</p>
 
     <blank-survey-template />
     <contact-survey-template />

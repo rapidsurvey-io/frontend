@@ -72,7 +72,7 @@ export default {
   }
 
   .c-category-header {
-    top: 95px;
+    top: 75px;
     left: 0;
     right: 0;
     position: sticky;

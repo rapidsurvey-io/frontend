@@ -16,6 +16,13 @@ export default {
     return {
       questions: [{
         questionId: generator.generate(),
+        questionName: 'What is your name?',
+        questionDescription: '',
+        categoryName: 'Your Details',
+        responseType: '2'
+      },
+      {
+        questionId: generator.generate(),
         questionName: 'What is your email address?',
         questionDescription: '',
         categoryName: 'Your Details',
