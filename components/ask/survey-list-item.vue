@@ -1,8 +1,34 @@
 <template>
-  <nuxt-link to="/ask" class="c-survey-list-item u-flex-container">
-    <p class="u-grow">Survey one</p>
-  </nuxt-link>
+  <div class="c-survey-list-item u-flex-container" @click="edit">
+    <p
+      class="u-grow"
+      v-text="survey.surveyName" />
+  </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  props: {
+    survey: {
+      type: Object,
+      required: true
+    }
+  },
+
+  methods: {
+    ...mapActions('activeSurvey', [
+      'startTemplate'
+    ]),
+
+    edit () {
+      this.startTemplate(this.survey)
+      this.$router.push('/ask')
+    }
+  }
+}
+</script>
 
 <style scoped lang="scss">
   .c-survey-list-item {

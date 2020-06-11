@@ -9,16 +9,48 @@
       <c-icon icon="share-alt" class="fa-fw" />
       <span>Publish</span>
     </div>
+
+    <div class="c-action" @click="save">
+      <c-icon icon="save" class="fa-fw" />
+      <span>Save</span>
+    </div>
   </section>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import SurveyModelGenerator from '@/models/survey.js'
 
 export default {
-  methods: mapActions('questionBuilder', [
-    'start'
-  ])
+  computed: mapState('activeSurvey', [
+    'surveyTitle',
+    'surveyDescription',
+    'questions',
+    'categories'
+  ]),
+
+  methods: {
+    ...mapActions('questionBuilder', [
+      'start'
+    ]),
+
+    ...mapActions('dashboardSurveys', [
+      'setSurvey'
+    ]),
+
+    save () {
+      this.setSurvey(
+        SurveyModelGenerator(
+          '1234',
+          this.surveyTitle,
+          this.surveyDescription,
+          'draft',
+          this.questions,
+          this.categories
+        )
+      )
+    }
+  }
 }
 </script>
 

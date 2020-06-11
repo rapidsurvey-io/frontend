@@ -56,9 +56,9 @@ export const mutations = {
 }
 
 export const actions = {
-  startTemplate: ({ commit }, { questions, surveyTitle, surveyDescription, categories }) => {
+  startTemplate: ({ commit }, { questions, surveyName, surveyDescription, categories }) => {
     commit('reset')
-    commit('setSurveyTitle', surveyTitle)
+    commit('setSurveyTitle', surveyName)
     commit('setSurveyDescription', surveyDescription)
     commit('setCategories', categories || [])
     questions.forEach((question) => {
