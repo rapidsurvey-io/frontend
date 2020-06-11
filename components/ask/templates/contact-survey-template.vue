@@ -9,58 +9,25 @@
 
 <script>
 import { mapActions } from 'vuex'
-import generator from 'shortid'
+import QuestionModelGenerator from '@/models/question.js'
+import CategoryModelGenerator from '@/models/category.js'
 
 export default {
   data () {
     return {
-      questions: [{
-        questionId: generator.generate(),
-        questionName: 'What is your name?',
-        questionDescription: '',
-        categoryName: 'Your Details',
-        responseType: '2'
-      },
-      {
-        questionId: generator.generate(),
-        questionName: 'What is your email address?',
-        questionDescription: '',
-        categoryName: 'Your Details',
-        responseType: '2'
-      },
-      {
-        questionId: generator.generate(),
-        questionName: 'Do you want a response?',
-        questionDescription: '',
-        categoryName: 'Your Details',
-        responseType: '1'
-      },
-      {
-        questionId: generator.generate(),
-        questionName: 'What is the nature of your message?',
-        questionDescription: '',
-        categoryName: 'Your Message',
-        responseType: '3',
-        responses: ['General Chat', 'Business', 'Other']
-      },
-      {
-        questionId: generator.generate(),
-        questionName: 'What message would you like to send?',
-        categoryName: 'Your Message',
-        responseType: '4'
-      }],
+      questions: [
+        QuestionModelGenerator('Your Details', 'What is your name?', '', '2'),
+        QuestionModelGenerator('Your Details', 'What is your email address?', '', '2'),
+        QuestionModelGenerator('Your Details', 'Do you want a response?', '', '1'),
+        QuestionModelGenerator('Your Message', 'What is the nature of your message?', '', '3', ['General Chat', 'Business', 'Other']),
+        QuestionModelGenerator('Your Message', 'What message would you like to send?', '', '4')
+      ],
       surveyTitle: 'Contact Me',
       surveyDescription: 'Click me to change the name and description of this survey...',
-      categories: [{
-        categoryName: 'Your Details',
-        categoryDescription: 'Let me know who you are and how I should get back to you...',
-        colourCode: 'blue'
-      },
-      {
-        categoryName: 'Your Message',
-        categoryDescription: 'What do you want to talk about?',
-        colourCode: 'blue'
-      }]
+      categories: [
+        CategoryModelGenerator('Your Details', 'Let me know who you are and how I should get back to you...', 'blue'),
+        CategoryModelGenerator('Your Message', 'What do you want to talk about...', 'blue')
+      ]
     }
   },
 

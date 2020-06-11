@@ -118,7 +118,7 @@ export default {
   }
 
   .c-category-questions {
-    margin-top: -150px;
+    margin-top: -200px;
 
     @media (max-width: 768px) {
       margin-top: 0;

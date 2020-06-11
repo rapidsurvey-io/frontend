@@ -1,7 +1,7 @@
-export default createQuestion = () => {
+export default (categoryName, categoryDescription, colourCode) => {
   return {
-    categoryName: '',
-    categoryDescription: '',
-    colourCode: 'blue'
+    categoryName,
+    categoryDescription,
+    colourCode: colourCode || 'blue'
   }
 }
