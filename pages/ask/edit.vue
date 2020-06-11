@@ -17,7 +17,8 @@
       :category-name="category" />
 
     <question-builder />
-    <category-builder />
+    <category-builder
+      v-if="showCategoryBuilder" />
   </section>
 </template>
 
@@ -45,6 +46,10 @@ export default {
       'surveyTitle',
       'surveyDescription',
       'questions'
+    ]),
+
+    ...mapState('categoryBuilder', [
+      'showCategoryBuilder'
     ])
   },
 

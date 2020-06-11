@@ -1,5 +1,5 @@
 <template>
-  <modal v-if="showCategoryBuilder" :submit-function="submit">
+  <modal :submit-function="submit">
     <template v-slot:header>
       <h3>
         <span>Edit Category</span>
@@ -16,6 +16,7 @@
 
       <field-textarea
         v-model="newCategoryDescription"
+        :model="newCategoryDescription"
         label="Would you like to describe the category?" />
     </template>
 
@@ -44,14 +45,13 @@ export default {
   },
 
   computed: mapState('categoryBuilder', [
-    'showCategoryBuilder',
-    'categoryName'
+    'categoryName',
+    'categoryDescription'
   ]),
 
-  watch: {
-    categoryName () {
-      this.newCategoryName = this.categoryName
-    }
+  mounted () {
+    this.newCategoryName = this.categoryName
+    this.newCategoryDescription = this.categoryDescription
   },
 
   methods: {
@@ -60,7 +60,6 @@ export default {
     ]),
 
     ...mapActions('activeSurvey', [
-      'addQuestion',
       'updateCategory'
     ]),
 

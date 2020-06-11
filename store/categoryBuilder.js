@@ -19,8 +19,8 @@ export const mutations = {
 }
 
 export const actions = {
-  showCategoryBuilder: ({ commit }, categoryName) => {
-    commit('show', { categoryName })
+  showCategoryBuilder: ({ commit }, { categoryName, categoryDescription }) => {
+    commit('show', { categoryName, categoryDescription })
   },
 
   cancelCategoryBuilder: ({ commit }) =>
