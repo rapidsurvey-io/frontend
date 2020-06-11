@@ -57,6 +57,12 @@ export default {
     this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Dashboard', href: '/dashboard' }, { icon: 'poll', title: 'Edit Survey', href: '/ask' }])
   },
 
+  head () {
+    return {
+      title: 'RapidSurvey.io | Edit Survey'
+    }
+  },
+
   middleware: [
     'auth'
   ]

@@ -60,7 +60,7 @@ export const actions = {
     commit('reset')
     commit('setSurveyTitle', surveyTitle)
     commit('setSurveyDescription', surveyDescription)
-    commit('setCategories', categories)
+    commit('setCategories', categories || [])
     questions.forEach((question) => {
       commit('addQuestion', question)
     })

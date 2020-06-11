@@ -5,20 +5,17 @@
 
     <blank-survey-template />
     <contact-survey-template />
-    <ice-cream-survey-template />
   </section>
 </template>
 
 <script>
 import BlankSurveyTemplate from '@/components/ask/templates/blank-survey-template.vue'
-import IceCreamSurveyTemplate from '@/components/ask/templates/ice-cream-survey-template.vue'
 import ContactSurveyTemplate from '@/components/ask/templates/contact-survey-template.vue'
 
 export default {
   components: {
     BlankSurveyTemplate,
-    ContactSurveyTemplate,
-    IceCreamSurveyTemplate
+    ContactSurveyTemplate
   }
 }
 </script>
