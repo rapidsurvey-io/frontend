@@ -1,35 +1,33 @@
 <template>
-  <modal v-if="showCategoryBuilder">
+  <modal v-if="showCategoryBuilder" :submit-function="submit">
     <template v-slot:header>
-      <div class="u-flex-container">
-        <h3 class="u-flex-grow">Edit Category</h3>
-        <c-icon icon="times" class="fa-fw u-pointer" @click="cancelCategoryBuilder" />
-      </div>
+      <h3>
+        <span>Edit Category</span>
+        <c-icon icon="times" class="fa-fw u-pointer u-float-right" @click="cancelCategoryBuilder" />
+      </h3>
     </template>
 
     <template v-slot:body>
-      <form class="c-category-slide" @submit.prevent="submit">
-        <field-input
-          v-model="newCategoryName"
-          :model="newCategoryName"
-          label="What do you want to call the category?"
-          is-required />
+      <field-input
+        v-model="newCategoryName"
+        :model="newCategoryName"
+        label="What do you want to call the category?"
+        is-required />
 
-        <field-textarea
-          v-model="newCategoryDescription"
-          label="Would you like to describe the category?" />
+      <field-textarea
+        v-model="newCategoryDescription"
+        label="Would you like to describe the category?" />
+    </template>
 
-        <div class="c-categoryBuilder-footer">
-          <square-button
-            text="Cancel"
-            :execute="cancelCategoryBuilder"
-            type="button" />
+    <template v-slot:footer>
+      <square-button
+        text="Cancel"
+        :execute="cancelCategoryBuilder"
+        type="button" />
 
-          <square-button
-            text="Save Changes"
-            is-primary />
-        </div>
-      </form>
+      <square-button
+        text="Save Changes"
+        is-primary />
     </template>
   </modal>
 </template>
@@ -78,10 +76,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.c-categoryBuilder-footer {
-  text-align: right;
-  padding: 10px;
-}
-</style>

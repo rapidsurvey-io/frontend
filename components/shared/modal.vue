@@ -1,6 +1,6 @@
-<template functional>
+<template>
   <overlay>
-    <div class="c-modal">
+    <form class="c-modal" @submit.prevent="submitFunction">
       <div class="c-modal-header">
         <slot
           name="header" />
@@ -10,13 +10,25 @@
         <slot
           name="body" />
       </div>
-    </div>
+
+      <div class="c-modal-footer">
+        <slot
+          name="footer" />
+      </div>
+    </form>
   </overlay>
 </template>
 
 <script>
 export default {
-  name: 'Modal'
+  name: 'Modal',
+
+  props: {
+    submitFunction: {
+      type: Function,
+      default: () => {}
+    }
+  }
 }
 </script>
 
@@ -45,8 +57,13 @@ export default {
 
 .c-modal-body {
   padding: 15px 20px;
-  min-height: 150px;
+  min-height: 100px;
   max-height: 80vh;
   overflow: auto;
+}
+
+.c-modal-footer {
+  padding: 5px 30px 25px 30px;
+  text-align: right;
 }
 </style>

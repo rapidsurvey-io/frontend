@@ -72,6 +72,14 @@ hr {
   cursor: pointer;
 }
 
+.u-float {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}
+
 .u-noScroll {
   overflow: auto;
   -ms-overflow-style: none;
