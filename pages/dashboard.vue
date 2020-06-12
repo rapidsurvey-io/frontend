@@ -13,7 +13,7 @@
       <existing-survey-selector />
     </div>
 
-    <events-header />
+    <events-header class="u-hidden-tablet" />
   </div>
 </template>
 

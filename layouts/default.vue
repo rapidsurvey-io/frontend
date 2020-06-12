@@ -30,6 +30,14 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: #EDEDED;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  padding-bottom: 40px;
 }
 
 input, button, select, textarea, p {
@@ -164,6 +172,12 @@ p.u-text-warning {
 
 .u-hidden-mobile {
   @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.u-hidden-tablet {
+  @media (max-width: 1024px) {
     display: none !important;
   }
 }

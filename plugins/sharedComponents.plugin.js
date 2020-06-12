@@ -8,6 +8,7 @@ import FieldSelect from '@/components/shared/field-select.vue'
 import FieldColourPicker from '@/components/shared/field-colour-picker.vue'
 import ActionWrapper from '@/components/shared/action-wrapper.vue'
 import IconButton from '@/components/shared/icon-button.vue'
+import TabButton from '@/components/shared/tab-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
 import StickyFooter from '@/components/shared/sticky-footer.vue'
 import Breadcrumb from '@/components/shared/breadcrumb.vue'
@@ -22,6 +23,7 @@ const sharedComponents = [
   FieldColourPicker,
   ActionWrapper,
   IconButton,
+  TabButton,
   PageHeader,
   StickyFooter,
   Breadcrumb

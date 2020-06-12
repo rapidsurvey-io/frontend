@@ -1,13 +1,9 @@
 <template>
   <section>
-    <page-header :has-actions="true">
+    <page-header>
       <template slot="heading">
         <h1 v-text="surveyName" />
         <p v-text="surveyDescription" />
-      </template>
-
-      <template slot="actions">
-        <survey-toolbar />
       </template>
     </page-header>
 
@@ -26,7 +22,6 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import SurveyToolbar from '@/components/ask/toolbars/survey-toolbar.vue'
 import AnswerCategory from '@/components/answer/category.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
@@ -34,7 +29,6 @@ import AskFooter from '@/components/ask/ask-footer.vue'
 
 export default {
   components: {
-    SurveyToolbar,
     AnswerCategory,
     QuestionBuilder,
     CategoryBuilder,
