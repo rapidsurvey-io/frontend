@@ -1,17 +1,21 @@
-<template>
+<template functional>
   <button
     class="c-button"
-    :type="type"
-    v-bind:class="[{ 'u-primary': isPrimary }, { 'c-button-white' : isWhite }]"
-    @click="execute">
+    :type="props.type"
+    :class="[
+      { 'u-primary': props.isPrimary },
+      { 'c-button-white' : props.isWhite }
+    ]"
+    @click="props.execute">
     <span
-      v-text="text" />
+      v-text="props.text" />
   </button>
 </template>
 
 <script>
 export default {
   name: 'SquareButton',
+
   props: {
     text: {
       type: String,

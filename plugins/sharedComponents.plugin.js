@@ -10,7 +10,6 @@ import ActionWrapper from '@/components/shared/action-wrapper.vue'
 import IconButton from '@/components/shared/icon-button.vue'
 import TabButton from '@/components/shared/tab-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
-import StickyFooter from '@/components/shared/sticky-footer.vue'
 import Breadcrumb from '@/components/shared/breadcrumb.vue'
 
 const sharedComponents = [
@@ -25,7 +24,6 @@ const sharedComponents = [
   IconButton,
   TabButton,
   PageHeader,
-  StickyFooter,
   Breadcrumb
 ]
 

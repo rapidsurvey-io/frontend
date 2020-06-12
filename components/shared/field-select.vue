@@ -3,10 +3,11 @@
     <p
       class="c-select-label"
       v-text="label" />
+
     <select
       :required="isRequired"
       :value="model"
-      @input="updateValue($event.target.value)">
+      @input="$emit('input', $event.target.value)">
       <slot />
     </select>
   </label>
@@ -30,12 +31,6 @@ export default {
     isRequired: {
       type: Boolean,
       default: false
-    }
-  },
-
-  methods: {
-    updateValue (value) {
-      this.$emit('input', value)
     }
   }
 }

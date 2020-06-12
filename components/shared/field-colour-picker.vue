@@ -1,13 +1,17 @@
 <template>
   <div class="c-colour-picker">
-    <p v-text="label" />
-    <div class="c-colour-picker-inner">
-      <option
-        v-for="(colour, index) in colours"
-        :key="index"
-        :class="`c-colour-picker-option ${colour} ${model === colour ? 'selected' : ''}`"
-        @click="updateValue(colour)" />
-    </div>
+    <p
+      v-text="label" />
+
+    <div
+      v-for="(colour, index) in colours"
+      :key="index"
+      :class="[
+        'c-colour-picker-option u-pointer',
+        { 'selected' : model === colour },
+        colour
+      ]"
+      @click="$emit('input', colour)" />
   </div>
 </template>
 
@@ -29,37 +33,21 @@ export default {
 
   data () {
     return {
-      colours: [
-        'gray',
-        'red',
-        'blue',
-        'green'
-      ]
-    }
-  },
-
-  methods: {
-    updateValue (value) {
-      this.$emit('input', value)
+      colours: ['gray', 'red', 'blue', 'green']
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-.c-colour-picker-inner {
-  padding: 10px;
-}
-
 .c-colour-picker-option {
   display: inline-block;
-  cursor: pointer;
   width: 32px;
   height: 32px;
-  background-color: red;
+  padding: 10px;
   border-radius: 50%;
   border: 1px dashed silver;
-  margin: 2.5px;
+  margin: 5px 2.5px;
 
   &.gray {
     background-color: gray;

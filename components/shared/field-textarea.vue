@@ -7,7 +7,7 @@
     <textarea
       :required="isRequired"
       :value="model"
-      @input="updateValue($event.target.value)" />
+      @input="$emit('input', $event.target.value)" />
   </label>
 </template>
 
@@ -21,20 +21,14 @@ export default {
       required: true
     },
 
-    isRequired: {
-      type: Boolean,
-      default: false
-    },
-
     model: {
       type: String,
       default: ''
-    }
-  },
+    },
 
-  methods: {
-    updateValue (value) {
-      this.$emit('input', value)
+    isRequired: {
+      type: Boolean,
+      default: false
     }
   }
 }

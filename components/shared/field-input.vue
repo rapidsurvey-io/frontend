@@ -7,8 +7,8 @@
     <input
       :required="isRequired"
       :value="model"
-      type="text"
-      @input="updateValue($event.target.value)">
+      :type="type"
+      @input="$emit('input', $event.target.value)">
   </label>
 </template>
 
@@ -22,20 +22,19 @@ export default {
       required: true
     },
 
+    model: {
+      type: String,
+      default: ''
+    },
+
     isRequired: {
       type: Boolean,
       default: false
     },
 
-    model: {
+    type: {
       type: String,
-      default: ''
-    }
-  },
-
-  methods: {
-    updateValue (value) {
-      this.$emit('input', value)
+      default: 'text'
     }
   }
 }

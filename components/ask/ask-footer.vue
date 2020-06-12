@@ -9,7 +9,8 @@
       <tab-button
         text="Ask Question"
         icon="plus"
-        :execute="start" />
+        :execute="start"
+        is-primary />
     </div>
   </div>
 </template>

@@ -1,15 +1,17 @@
 <template>
-  <div v-show="links" class="c-breadcrumb">
-    <div class="c-breadcrumb-inner">
-      <nuxt-link
-        v-for="(step, index) in links"
-        :key="index"
-        class="c-breadcrumb-link"
-        :to="step.href">
-        <c-icon v-if="step.icon" :icon="step.icon" />
-        <span v-text="step.title" />
-      </nuxt-link>
-    </div>
+  <div class="c-breadcrumb">
+    <nuxt-link
+      v-for="(step, index) in links"
+      :key="index"
+      class="c-breadcrumb-link"
+      :to="step.href">
+      <c-icon
+        v-if="step.icon"
+        :icon="step.icon" />
+
+      <span
+        v-text="step.title" />
+    </nuxt-link>
   </div>
 </template>
 
@@ -24,18 +26,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .c-breadcrumb {
     display: flex;
-    align-items: center;
     background-color: #E2E2E2;
-    border-radius: 10px;
-  }
-
-  .c-breadcrumb-inner {
-    width: 95%;
-    padding: 17.5px 0;
-    margin: 0 auto;
+    padding: 7.5px 30px;
   }
 
   .c-breadcrumb-link {
@@ -44,11 +39,10 @@ export default {
     padding: 10px;
     color: black;
     border-radius: 10px;
-    background-color: transparent;
     transition: background-color 0.2s ease-in-out;
-  }
 
-  .c-breadcrumb-link:hover {
-    background-color: #C4C4C4;
+    &:hover {
+      background-color: #C4C4C4;
+    }
   }
 </style>

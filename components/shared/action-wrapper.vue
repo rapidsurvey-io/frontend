@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div class="c-action-wrapper">
     <slot />
   </div>
@@ -6,25 +6,18 @@
 
 <script>
 export default {
-  name: 'ActionWrapper',
-
-  props: {
-    isLight: {
-      type: Boolean,
-      default: true
-    }
-  }
+  name: 'ActionWrapper'
 }
 </script>
 
 <style scoped>
   .c-action-wrapper {
     position: absolute;
-    background-color: #EDEDED;
-    border-radius: 5px;
-    right: 8px;
-    border: 1px solid white;
     top: 8px;
+    right: 8px;
     z-index: 5;
+    border-radius: 5px;
+    background-color: #EDEDED;
+    border: 1px solid white;
   }
 </style>
