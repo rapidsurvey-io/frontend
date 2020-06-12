@@ -31,6 +31,10 @@ export default {
     display: flex;
     background-color: #E2E2E2;
     padding: 7.5px 30px;
+
+    @media (max-width: 768px) {
+      padding: 7.5px 10px;
+    }
   }
 
   .c-breadcrumb-link {
