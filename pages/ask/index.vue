@@ -1,11 +1,6 @@
 <template>
   <section>
-    <page-header>
-      <template slot="heading">
-        <h1 v-text="surveyName" />
-        <p v-text="surveyDescription" />
-      </template>
-    </page-header>
+    <survey-heading />
 
     <answer-category
       v-for="(category, index) in categories"
@@ -31,13 +26,15 @@ import AnswerCategory from '@/components/answer/category.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
 import AskFooter from '@/components/ask/ask-footer.vue'
+import SurveyHeading from '@/components/answer/survey-heading.vue'
 
 export default {
   components: {
     AnswerCategory,
     QuestionBuilder,
     CategoryBuilder,
-    AskFooter
+    AskFooter,
+    SurveyHeading
   },
 
   computed: {

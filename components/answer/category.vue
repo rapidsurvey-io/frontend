@@ -86,7 +86,7 @@ export default {
     left: 0;
     right: 0;
     position: sticky;
-    padding: 100px 30px 120px 30px;
+    padding: 80px 30px 100px 30px;
     background-color: #E2E2E2;
     transition: background-color 0.3s ease-in-out;
     border-radius: 10px;
@@ -127,7 +127,7 @@ export default {
   }
 
   .c-category-questions {
-    margin-top: -200px;
+    margin-top: -150px;
 
     @media (max-width: 768px) {
       margin-top: 0;

@@ -11,6 +11,7 @@ import IconButton from '@/components/shared/icon-button.vue'
 import TabButton from '@/components/shared/tab-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
 import Breadcrumb from '@/components/shared/breadcrumb.vue'
+import EditableElement from '@/components/shared/editable-element.vue'
 
 const sharedComponents = [
   Modal,
@@ -24,7 +25,8 @@ const sharedComponents = [
   IconButton,
   TabButton,
   PageHeader,
-  Breadcrumb
+  Breadcrumb,
+  EditableElement
 ]
 
 sharedComponents.forEach((component) => {

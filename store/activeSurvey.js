@@ -28,7 +28,7 @@ export const mutations = {
   deleteCategory: (state, categoryName) => {
     state.questions = state.questions.filter(question => question.categoryName !== categoryName)
   },
-  setsurveyName: (state, surveyName) => {
+  setSurveyName: (state, surveyName) => {
     state.surveyName = surveyName
   },
   setSurveyDescription: (state, surveyDescription) => {
@@ -58,7 +58,7 @@ export const mutations = {
 export const actions = {
   startTemplate: ({ commit }, { questions, surveyName, surveyDescription, categories }) => {
     commit('reset')
-    commit('setsurveyName', surveyName)
+    commit('setSurveyName', surveyName)
     commit('setSurveyDescription', surveyDescription)
     commit('setCategories', categories || [])
     questions.forEach((question) => {
