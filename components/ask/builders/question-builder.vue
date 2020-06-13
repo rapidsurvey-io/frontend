@@ -69,11 +69,12 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import generator from 'shortid'
-import { QUESTION_BUILDER_HIDE, ACTIVE_SURVEY_ADD_QUESTION } from '@/store/mutations.constants'
+import { QUESTION_BUILDER_HIDE } from '@/store/mutations.constants'
 
 export default {
   data () {
     return {
+      questionId: '',
       questionName: '',
       questionDescription: '',
       categorySelection: 'new',
@@ -109,6 +110,7 @@ export default {
 
   mounted () {
     if (this.questionToEdit) {
+      this.questionId = this.questionToEdit.questionId
       this.questionName = this.questionToEdit.questionName
       this.questionDescription = this.questionToEdit.questionDescription
       this.categoryName = this.questionToEdit.categoryName
@@ -116,6 +118,8 @@ export default {
       this.responseType = this.questionToEdit.responseType
       this.showCategoryNameField = false
       this.showDescriptionField = (this.questionToEdit.questionDescription)
+    } else {
+      this.questionId = generator.generate()
     }
   },
 
@@ -124,33 +128,20 @@ export default {
       QUESTION_BUILDER_HIDE
     ]),
 
-    ...mapMutations('activeSurvey', [
-      ACTIVE_SURVEY_ADD_QUESTION
-    ]),
-
     ...mapActions('activeSurvey', [
       'updateQuestion'
     ]),
 
     submitQuestion () {
-      if (this.questionToEdit) {
-        this.updateQuestion({
-          questionId: this.questionToEdit.questionId,
-          questionName: this.questionName,
-          questionDescription: this.questionDescription,
-          categoryName: this.categoryName,
-          responseType: this.responseType
-        })
-      } else {
-        this.ACTIVE_SURVEY_ADD_QUESTION({
-          questionId: generator.generate(),
-          questionName: this.questionName,
-          questionDescription: this.questionDescription,
-          categoryName: this.categoryName,
-          responseType: this.responseType
-        })
-      }
+      this.updateQuestion({
+        questionId: this.questionId,
+        questionName: this.questionName,
+        questionDescription: this.questionDescription,
+        categoryName: this.categoryName,
+        responseType: this.responseType
+      })
 
+      this.questionId = ''
       this.questionName = ''
       this.questionDescription = ''
       this.categoryName = ''

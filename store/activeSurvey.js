@@ -5,8 +5,7 @@ import {
   ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION,
   ACTIVE_SURVEY_SET_SURVEY_QUESTIONS,
   ACTIVE_SURVEY_SET_SURVEY_CATEGORIES,
-  ACTIVE_SURVEY_UPDATE_CATEGORY_NAME,
-  ACTIVE_SURVEY_ADD_QUESTION
+  ACTIVE_SURVEY_UPDATE_CATEGORY_NAME
 } from '@/store/mutations.constants'
 
 export const state = () => ({
@@ -27,7 +26,6 @@ export const mutations = {
   },
 
   [ACTIVE_SURVEY_DELETE_CATEGORY]: (state, categoryName) => {
-    state.questions = state.questions.filter(qst => qst.categoryName !== categoryName)
     state.categories = state.categories.filter(cat => cat.categoryName !== categoryName)
   },
 
@@ -53,13 +51,6 @@ export const mutations = {
       .forEach((question) => {
         question.categoryName = newCategoryName
       })
-  },
-
-  [ACTIVE_SURVEY_ADD_QUESTION]: (state, question) => {
-    state.questions = [
-      ...state.questions,
-      question
-    ]
   }
 }
 
@@ -83,10 +74,8 @@ export const actions = {
   },
 
   updateCategory: ({ commit, state }, { oldCategoryName, newCategoryName, newCategoryDescription, colourCode }) => {
-    if (oldCategoryName !== newCategoryName) {
-      commit(ACTIVE_SURVEY_UPDATE_CATEGORY_NAME, { oldCategoryName, newCategoryName })
-      commit(ACTIVE_SURVEY_DELETE_CATEGORY, oldCategoryName)
-    }
+    commit(ACTIVE_SURVEY_UPDATE_CATEGORY_NAME, { oldCategoryName, newCategoryName })
+    commit(ACTIVE_SURVEY_DELETE_CATEGORY, oldCategoryName)
 
     const categories = [...state.categories]
 
