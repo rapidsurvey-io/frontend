@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-
+import { mapState, mapMutations, mapActions } from 'vuex'
+import { QUESTION_BUILDER_SET_EDIT_SURVEY, QUESTION_BUILDER_SHOW } from '@/store/mutations.constants'
 export default {
   props: {
     questionId: {
@@ -29,14 +29,16 @@ export default {
       'deleteQuestion'
     ]),
 
-    ...mapActions('questionBuilder', [
-      'edit'
+    ...mapMutations('questionBuilder', [
+      QUESTION_BUILDER_SET_EDIT_SURVEY,
+      QUESTION_BUILDER_SHOW
     ]),
 
     editQuestion () {
       const question = this.questions.find(question => question.questionId === this.questionId)
 
-      this.edit(question)
+      this.QUESTION_BUILDER_SET_EDIT_SURVEY(question)
+      this.QUESTION_BUILDER_SHOW()
     }
   }
 }

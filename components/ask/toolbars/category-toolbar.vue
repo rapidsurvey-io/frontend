@@ -1,6 +1,6 @@
 <template>
   <action-wrapper>
-    <span @click="showCategoryBuilder(category)">
+    <span @click="CATEGORY_BUILDER_SHOW(category)">
       <icon-button icon="wrench" />
     </span>
     <span @click="deleteCategory(categoryName)">
@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
+import { CATEGORY_BUILDER_SHOW } from '@/store/mutations.constants'
 
 export default {
   props: {
@@ -41,8 +42,8 @@ export default {
       'deleteCategory'
     ]),
 
-    ...mapActions('categoryBuilder', [
-      'showCategoryBuilder'
+    ...mapMutations('categoryBuilder', [
+      CATEGORY_BUILDER_SHOW
     ])
   }
 }

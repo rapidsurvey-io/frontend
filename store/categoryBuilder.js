@@ -1,3 +1,8 @@
+import {
+  CATEGORY_BUILDER_SHOW,
+  CATEGORY_BUILDER_HIDE
+} from '@/store/mutations.constants'
+
 export const state = () => ({
   showCategoryBuilder: false,
   categoryName: '',
@@ -6,13 +11,13 @@ export const state = () => ({
 })
 
 export const mutations = {
-  hide: (state) => {
+  [CATEGORY_BUILDER_HIDE]: (state) => {
     state.showCategoryBuilder = false
     state.categoryName = ''
     state.categoryDescription = ''
   },
 
-  show: (state, { categoryName, categoryDescription, colourCode }) => {
+  [CATEGORY_BUILDER_SHOW]: (state, { categoryName, categoryDescription, colourCode }) => {
     state.showCategoryBuilder = true
     state.categoryName = categoryName
     state.categoryDescription = categoryDescription
@@ -22,9 +27,6 @@ export const mutations = {
 
 export const actions = {
   showCategoryBuilder: ({ commit }, { categoryName, categoryDescription, colourCode }) => {
-    commit('show', { categoryName, categoryDescription, colourCode })
-  },
-
-  cancelCategoryBuilder: ({ commit }) =>
-    commit('hide')
+    commit([CATEGORY_BUILDER_SHOW], { categoryName, categoryDescription, colourCode })
+  }
 }

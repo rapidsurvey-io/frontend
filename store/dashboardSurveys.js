@@ -1,27 +1,24 @@
+import { DASHBOARD_SET_SURVEYS } from '@/store/mutations.constants'
+
 export const state = () => ({
   surveys: []
 })
 
 export const mutations = {
-  setSurveys: (state, surveys) => {
+  [DASHBOARD_SET_SURVEYS]: (state, surveys) => {
     state.surveys = surveys
-  },
-
-  setSurvey: (state, survey) => {
-    state.surveys = state.surveys.filter(svy => svy.surveyId !== survey.surveyId)
-
-    state.surveys = [
-      survey,
-      ...state.surveys
-    ]
   }
 }
 
 export const actions = {
-  setSurveys: ({ commit }, surveys) => {
-    commit('setSurveys', surveys)
-  },
-  setSurvey: ({ commit }, survey) => {
-    commit('setSurvey', survey)
+  setSurvey: ({ commit, state }, survey) => {
+    let surveys = state.surveys.filter(svy => svy.surveyId !== survey.surveyId)
+
+    surveys = [
+      survey,
+      ...state.surveys
+    ]
+
+    commit(DASHBOARD_SET_SURVEYS, surveys)
   }
 }

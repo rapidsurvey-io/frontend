@@ -1,33 +1,25 @@
+import {
+  QUESTION_BUILDER_SHOW,
+  QUESTION_BUILDER_HIDE,
+  QUESTION_BUILDER_SET_EDIT_SURVEY
+} from '@/store/mutations.constants'
+
 export const state = () => ({
   showQuestionBuilder: false,
   questionToEdit: null
 })
 
 export const mutations = {
-  hide: (state) => {
+  [QUESTION_BUILDER_HIDE]: (state) => {
     state.showQuestionBuilder = false
     state.questionToEdit = null
   },
 
-  show: (state) => {
+  [QUESTION_BUILDER_SHOW]: (state) => {
     state.showQuestionBuilder = true
   },
 
-  edit: (state, question) => {
+  [QUESTION_BUILDER_SET_EDIT_SURVEY]: (state, question) => {
     state.questionToEdit = question
   }
-}
-
-export const actions = {
-  start: ({ commit }) => {
-    commit('show')
-  },
-
-  edit: ({ commit }, question) => {
-    commit('edit', question)
-    commit('show')
-  },
-
-  cancel: ({ commit }) =>
-    commit('hide')
 }

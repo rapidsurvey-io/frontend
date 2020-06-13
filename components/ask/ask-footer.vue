@@ -9,21 +9,22 @@
       <tab-button
         text="Ask Question"
         icon="plus"
-        :execute="start"
+        :execute="QUESTION_BUILDER_SHOW"
         is-primary />
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapMutations } from 'vuex'
 import SaveSurveyMixin from '@/mixins/save-survey.mixin.vue'
+import { QUESTION_BUILDER_SHOW } from '@/store/mutations.constants'
 
 export default {
   mixins: [SaveSurveyMixin],
 
-  methods: mapActions('questionBuilder', [
-    'start'
+  methods: mapMutations('questionBuilder', [
+    QUESTION_BUILDER_SHOW
   ])
 }
 </script>

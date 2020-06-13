@@ -3,7 +3,7 @@
     <template v-slot:header>
       <h3>
         <span>Ask a question</span>
-        <c-icon icon="times" class="fa-fw u-pointer u-float-right" @click="cancel" />
+        <c-icon icon="times" class="fa-fw u-pointer u-float-right" @click="QUESTION_BUILDER_HIDE" />
       </h3>
     </template>
 
@@ -56,7 +56,7 @@
     <template v-slot:footer>
       <square-button
         text="Cancel"
-        :execute="cancel"
+        :execute="QUESTION_BUILDER_HIDE"
         type="button" />
 
       <square-button
@@ -67,8 +67,9 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import generator from 'shortid'
+import { QUESTION_BUILDER_HIDE } from '@/store/mutations.constants'
 
 export default {
   data () {
@@ -119,8 +120,8 @@ export default {
   },
 
   methods: {
-    ...mapActions('questionBuilder', [
-      'cancel'
+    ...mapMutations('questionBuilder', [
+      QUESTION_BUILDER_HIDE
     ]),
 
     ...mapActions('activeSurvey', [
@@ -151,7 +152,7 @@ export default {
       this.questionDescription = ''
       this.categoryName = ''
 
-      this.cancel()
+      this.QUESTION_BUILDER_HIDE()
     }
   }
 }

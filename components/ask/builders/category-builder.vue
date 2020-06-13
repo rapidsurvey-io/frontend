@@ -3,7 +3,7 @@
     <template v-slot:header>
       <h3>
         <span>Edit Category</span>
-        <c-icon icon="times" class="fa-fw u-pointer u-float-right" @click="cancelCategoryBuilder" />
+        <c-icon icon="times" class="fa-fw u-pointer u-float-right" @click="CATEGORY_BUILDER_HIDE" />
       </h3>
     </template>
 
@@ -28,7 +28,7 @@
     <template v-slot:footer>
       <square-button
         text="Cancel"
-        :execute="cancelCategoryBuilder"
+        :execute="CATEGORY_BUILDER_HIDE"
         type="button" />
 
       <square-button
@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-
+import { mapState, mapMutations, mapActions } from 'vuex'
+import { CATEGORY_BUILDER_HIDE } from '@/store/mutations.constants'
 export default {
   data () {
     return {
@@ -63,8 +63,8 @@ export default {
   },
 
   methods: {
-    ...mapActions('categoryBuilder', [
-      'cancelCategoryBuilder'
+    ...mapMutations('categoryBuilder', [
+      CATEGORY_BUILDER_HIDE
     ]),
 
     ...mapActions('activeSurvey', [
@@ -79,7 +79,7 @@ export default {
         colourCode: this.newColour
       })
 
-      this.cancelCategoryBuilder()
+      this.CATEGORY_BUILDER_HIDE()
     }
   }
 }
