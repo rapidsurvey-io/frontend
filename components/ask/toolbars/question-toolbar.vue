@@ -3,15 +3,16 @@
     <span @click="editQuestion">
       <icon-button icon="wrench" />
     </span>
-    <span @click="deleteQuestion(questionId)">
+    <span @click="ACTIVE_SURVEY_DELETE_QUESTION(questionId)">
       <icon-button />
     </span>
   </action-wrapper>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
-import { QUESTION_BUILDER_SET_EDIT_SURVEY, QUESTION_BUILDER_SHOW } from '@/store/mutations.constants'
+import { mapState, mapMutations } from 'vuex'
+import { QUESTION_BUILDER_SET_EDIT_SURVEY, QUESTION_BUILDER_SHOW, ACTIVE_SURVEY_DELETE_QUESTION } from '@/store/mutations.constants'
+
 export default {
   props: {
     questionId: {
@@ -25,8 +26,8 @@ export default {
   ]),
 
   methods: {
-    ...mapActions('activeSurvey', [
-      'deleteQuestion'
+    ...mapMutations('activeSurvey', [
+      ACTIVE_SURVEY_DELETE_QUESTION
     ]),
 
     ...mapMutations('questionBuilder', [

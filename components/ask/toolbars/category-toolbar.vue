@@ -3,15 +3,15 @@
     <span @click="CATEGORY_BUILDER_SHOW(category)">
       <icon-button icon="wrench" />
     </span>
-    <span @click="deleteCategory(categoryName)">
+    <span @click="ACTIVE_SURVEY_DELETE_CATEGORY(categoryName)">
       <icon-button />
     </span>
   </action-wrapper>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
-import { CATEGORY_BUILDER_SHOW } from '@/store/mutations.constants'
+import { mapState, mapMutations } from 'vuex'
+import { CATEGORY_BUILDER_SHOW, ACTIVE_SURVEY_DELETE_CATEGORY } from '@/store/mutations.constants'
 
 export default {
   props: {
@@ -38,8 +38,8 @@ export default {
   },
 
   methods: {
-    ...mapActions('activeSurvey', [
-      'deleteCategory'
+    ...mapMutations('activeSurvey', [
+      ACTIVE_SURVEY_DELETE_CATEGORY
     ]),
 
     ...mapMutations('categoryBuilder', [

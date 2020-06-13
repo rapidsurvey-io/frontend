@@ -69,7 +69,7 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import generator from 'shortid'
-import { QUESTION_BUILDER_HIDE } from '@/store/mutations.constants'
+import { QUESTION_BUILDER_HIDE, ACTIVE_SURVEY_ADD_QUESTION } from '@/store/mutations.constants'
 
 export default {
   data () {
@@ -124,8 +124,11 @@ export default {
       QUESTION_BUILDER_HIDE
     ]),
 
+    ...mapMutations('activeSurvey', [
+      ACTIVE_SURVEY_ADD_QUESTION
+    ]),
+
     ...mapActions('activeSurvey', [
-      'addQuestion',
       'updateQuestion'
     ]),
 
@@ -139,7 +142,7 @@ export default {
           responseType: this.responseType
         })
       } else {
-        this.addQuestion({
+        this.ACTIVE_SURVEY_ADD_QUESTION({
           questionId: generator.generate(),
           questionName: this.questionName,
           questionDescription: this.questionDescription,
