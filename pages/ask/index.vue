@@ -12,7 +12,9 @@
       :key="index"
       :category-name="category" />
 
-    <question-builder />
+    <question-builder
+      v-if="showQuestionBuilder" />
+
     <category-builder
       v-if="showCategoryBuilder" />
 
@@ -48,6 +50,10 @@ export default {
 
     ...mapState('categoryBuilder', [
       'showCategoryBuilder'
+    ]),
+
+    ...mapState('questionBuilder', [
+      'showQuestionBuilder'
     ])
   },
 

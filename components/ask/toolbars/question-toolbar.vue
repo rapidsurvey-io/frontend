@@ -1,6 +1,8 @@
 <template>
   <action-wrapper>
-    <!-- <icon-button icon="wrench" /> -->
+    <span @click="editQuestion">
+      <icon-button icon="wrench" />
+    </span>
     <span @click="deleteQuestion(questionId)">
       <icon-button />
     </span>
@@ -8,7 +10,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   props: {
@@ -18,8 +20,24 @@ export default {
     }
   },
 
-  methods: mapActions('activeSurvey', [
-    'deleteQuestion'
-  ])
+  computed: mapState('activeSurvey', [
+    'questions'
+  ]),
+
+  methods: {
+    ...mapActions('activeSurvey', [
+      'deleteQuestion'
+    ]),
+
+    ...mapActions('questionBuilder', [
+      'edit'
+    ]),
+
+    editQuestion () {
+      const question = this.questions.find(question => question.questionId === this.questionId)
+
+      this.edit(question)
+    }
+  }
 }
 </script>

@@ -69,6 +69,10 @@ export const actions = {
   addQuestion: ({ commit }, question) => {
     commit('addQuestion', question)
   },
+  updateQuestion: ({ commit }, question) => {
+    commit('deleteQuestion', question.questionId)
+    commit('addQuestion', question)
+  },
   deleteQuestion: ({ commit }, questionId) => {
     commit('deleteQuestion', questionId)
   },

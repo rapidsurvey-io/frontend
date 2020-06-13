@@ -1,5 +1,5 @@
 <template>
-  <modal v-if="showQuestionBuilder" :submit-function="submitQuestion">
+  <modal :submit-function="submitQuestion">
     <template v-slot:header>
       <h3>
         <span>Ask a question</span>
@@ -31,12 +31,14 @@
 
       <field-input
         v-model="questionName"
+        :model="questionName"
         label="What do you want to ask? (*)"
         is-required />
 
       <field-textarea
         v-show="showDescriptionField"
         v-model="questionDescription"
+        :model="questionDescription"
         label="Would you like to describe the question?" />
 
       <hr>
@@ -83,7 +85,8 @@ export default {
 
   computed: {
     ...mapState('questionBuilder', [
-      'showQuestionBuilder'
+      'showQuestionBuilder',
+      'questionToEdit'
     ]),
 
     ...mapGetters('activeSurvey', [
@@ -103,23 +106,46 @@ export default {
     }
   },
 
+  mounted () {
+    if (this.questionToEdit) {
+      this.questionName = this.questionToEdit.questionName
+      this.questionDescription = this.questionToEdit.questionDescription
+      this.categoryName = this.questionToEdit.categoryName
+      this.categorySelection = this.questionToEdit.categoryName
+      this.responseType = this.questionToEdit.responseType
+      this.showCategoryNameField = false
+      this.showDescriptionField = (this.questionToEdit.questionDescription)
+    }
+  },
+
   methods: {
     ...mapActions('questionBuilder', [
       'cancel'
     ]),
 
     ...mapActions('activeSurvey', [
-      'addQuestion'
+      'addQuestion',
+      'updateQuestion'
     ]),
 
     submitQuestion () {
-      this.addQuestion({
-        questionId: generator.generate(),
-        questionName: this.questionName,
-        questionDescription: this.questionDescription,
-        categoryName: this.categoryName,
-        responseType: this.responseType
-      })
+      if (this.questionToEdit) {
+        this.updateQuestion({
+          questionId: this.questionToEdit.questionId,
+          questionName: this.questionName,
+          questionDescription: this.questionDescription,
+          categoryName: this.categoryName,
+          responseType: this.responseType
+        })
+      } else {
+        this.addQuestion({
+          questionId: generator.generate(),
+          questionName: this.questionName,
+          questionDescription: this.questionDescription,
+          categoryName: this.categoryName,
+          responseType: this.responseType
+        })
+      }
 
       this.questionName = ''
       this.questionDescription = ''
