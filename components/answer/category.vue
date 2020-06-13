@@ -1,5 +1,5 @@
 <template>
-  <section class="c-category">
+  <section class="c-category c-action-wrapper-parent">
     <div :class="`c-category-header ${categoryColour}`">
       <div class="c-category-header-inner">
         <h2

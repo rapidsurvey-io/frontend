@@ -24,9 +24,3 @@ export const mutations = {
     state.colourCode = colourCode
   }
 }
-
-export const actions = {
-  showCategoryBuilder: ({ commit }, { categoryName, categoryDescription, colourCode }) => {
-    commit([CATEGORY_BUILDER_SHOW], { categoryName, categoryDescription, colourCode })
-  }
-}
