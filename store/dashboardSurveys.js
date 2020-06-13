@@ -16,7 +16,7 @@ export const actions = {
 
     surveys = [
       survey,
-      ...state.surveys
+      ...surveys
     ]
 
     commit(DASHBOARD_SET_SURVEYS, surveys)

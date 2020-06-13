@@ -4,6 +4,7 @@ import SurveyModelGenerator from '@/models/survey.js'
 
 export default {
   computed: mapState('activeSurvey', [
+    'surveyId',
     'surveyName',
     'surveyDescription',
     'questions',
@@ -22,7 +23,7 @@ export default {
     save () {
       this.setSurvey(
         SurveyModelGenerator(
-          '1234',
+          this.surveyId,
           this.surveyName,
           this.surveyDescription,
           'draft',

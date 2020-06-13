@@ -1,6 +1,7 @@
 import {
   ACTIVE_SURVEY_DELETE_QUESTION,
   ACTIVE_SURVEY_DELETE_CATEGORY,
+  ACTIVE_SURVEY_SET_SURVEY_ID,
   ACTIVE_SURVEY_SET_SURVEY_NAME,
   ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION,
   ACTIVE_SURVEY_SET_SURVEY_QUESTIONS,
@@ -9,6 +10,7 @@ import {
 } from '@/store/mutations.constants'
 
 export const state = () => ({
+  surveyId: '',
   surveyName: 'Blank Survey',
   surveyDescription: 'Click me to change the name and description of this survey',
   questions: [],
@@ -21,6 +23,10 @@ export const getters = {
 }
 
 export const mutations = {
+  [ACTIVE_SURVEY_SET_SURVEY_ID]: (state, surveyId) => {
+    state.surveyId = surveyId
+  },
+
   [ACTIVE_SURVEY_DELETE_QUESTION]: (state, questionId) => {
     state.questions = state.questions.filter(question => question.questionId !== questionId)
   },
@@ -55,7 +61,8 @@ export const mutations = {
 }
 
 export const actions = {
-  startTemplate: ({ commit }, { questions, surveyName, surveyDescription, categories }) => {
+  startTemplate: ({ commit }, { questions, surveyId, surveyName, surveyDescription, categories }) => {
+    commit(ACTIVE_SURVEY_SET_SURVEY_ID, surveyId)
     commit(ACTIVE_SURVEY_SET_SURVEY_NAME, surveyName)
     commit(ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION, surveyDescription)
     commit(ACTIVE_SURVEY_SET_SURVEY_CATEGORIES, categories || [])

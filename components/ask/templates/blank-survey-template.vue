@@ -9,6 +9,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import generator from 'shortid'
 
 export default {
   data () {
@@ -27,6 +28,7 @@ export default {
     create () {
       this.startTemplate({
         questions: this.questions,
+        surveyId: generator.generate(),
         surveyName: this.surveyName,
         surveyDescription: this.surveyDescription
       })
