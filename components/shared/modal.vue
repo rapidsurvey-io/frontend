@@ -63,7 +63,6 @@ export default {
 }
 
 .c-modal-footer {
-  padding: 5px 30px 25px 30px;
-  text-align: right;
+  padding: 5px 30px 25px 25px;
 }
 </style>

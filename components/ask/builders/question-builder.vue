@@ -39,6 +39,7 @@
         v-show="showDescriptionField"
         v-model="questionDescription"
         :model="questionDescription"
+        class="a-fadeIn"
         label="Would you like to describe the question?" />
 
       <hr>
@@ -55,13 +56,20 @@
 
     <template v-slot:footer>
       <square-button
-        text="Cancel"
-        :execute="QUESTION_BUILDER_HIDE"
+        text="Add Description"
+        :execute="showDescription"
         type="button" />
 
-      <square-button
-        text="Add Question"
-        is-primary />
+      <div class="u-float-right">
+        <square-button
+          text="Cancel"
+          :execute="QUESTION_BUILDER_HIDE"
+          type="button" />
+
+        <square-button
+          text="Add Question"
+          is-primary />
+      </div>
     </template>
   </modal>
 </template>
@@ -131,6 +139,10 @@ export default {
     ...mapActions('activeSurvey', [
       'updateQuestion'
     ]),
+
+    showDescription () {
+      this.showDescriptionField = true
+    },
 
     submitQuestion () {
       this.updateQuestion({
