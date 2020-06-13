@@ -10,15 +10,18 @@
     <answer-category
       v-for="(category, index) in categories"
       :key="index"
+      class="a-fadeIn"
       :category-name="category" />
 
-    <question-builder
-      v-if="showQuestionBuilder" />
+    <client-only>
+      <question-builder
+        v-if="showQuestionBuilder" />
 
-    <category-builder
-      v-if="showCategoryBuilder" />
+      <category-builder
+        v-if="showCategoryBuilder" />
 
-    <ask-footer />
+      <ask-footer />
+    </client-only>
   </section>
 </template>
 

@@ -88,6 +88,7 @@ export default {
     position: sticky;
     padding: 100px 30px 120px 30px;
     background-color: #E2E2E2;
+    transition: background-color 0.3s ease-in-out;
     border-radius: 10px;
     opacity: 0.9;
 

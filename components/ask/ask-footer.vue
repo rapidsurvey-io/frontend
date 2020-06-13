@@ -1,5 +1,5 @@
 <template>
-  <div class="c-answer-footer">
+  <div class="c-answer-footer a-slideInUp">
     <div class="c-answer-footer-inner">
       <tab-button
         text="Save Survey"

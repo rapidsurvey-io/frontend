@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import '@/styles/animation.scss'
 import MainNavigator from '~/components/navigation/main-navigator.vue'
 
 export default {
