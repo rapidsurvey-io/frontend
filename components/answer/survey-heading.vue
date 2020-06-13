@@ -4,17 +4,18 @@
       <editable-element
         element="h1"
         :text="surveyName"
-        @component-updated="setSurveyName" />
+        @component-updated="ACTIVE_SURVEY_SET_SURVEY_NAME" />
       <editable-element
         element="p"
         :text="surveyDescription"
-        @component-updated="setSurveyDescription" />
+        @component-updated="ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION" />
     </template>
   </page-header>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { ACTIVE_SURVEY_SET_SURVEY_NAME, ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION } from '@/store/mutations.constants'
 
 export default {
   computed: mapState('activeSurvey', [
@@ -23,8 +24,8 @@ export default {
   ]),
 
   methods: mapMutations('activeSurvey', [
-    'setSurveyName',
-    'setSurveyDescription'
+    ACTIVE_SURVEY_SET_SURVEY_NAME,
+    ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION
   ])
 }
 </script>
