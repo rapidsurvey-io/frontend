@@ -58,7 +58,8 @@ export default {
 
   plugins: [
     '~/plugins/fontawesome.plugin.js',
-    '~/plugins/sharedComponents.plugin.js'
+    '~/plugins/sharedComponents.plugin.js',
+    { src: '~/plugins/state-persist', ssr: false }
   ],
 
   server: {
