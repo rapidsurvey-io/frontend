@@ -97,16 +97,28 @@ export default {
     }
 
     &.red {
-      background-color: #FE5F55;
+      background-color: #FF4E50;
     }
 
     &.blue {
-      background-color: #003FBA;
+      background-color: #476F95;
       color: white;
     }
 
     &.green {
-      background-color: #87B38D;
+      background-color: #3FB8AF;
+    }
+
+    &.orange {
+      background-color: #FC913A;
+    }
+
+    &.yellow {
+      background-color: #F9D423;
+    }
+
+    &.purple {
+      background-color: #AB526B;
     }
 
     @media (max-width: 768px) {

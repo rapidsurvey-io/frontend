@@ -1,10 +1,10 @@
 <template>
   <action-wrapper>
-    <span @click.prevent="$emit('edit')" title="Edit Survey">
+    <span title="Edit Survey" @click.prevent="$emit('edit')">
       <icon-button icon="pen" />
     </span>
 
-    <span @click.prevent="$emit('delete')" title="Delete Survey">
+    <span title="Delete Survey" @click.prevent="$emit('delete')">
       <icon-button icon="trash-alt" />
     </span>
   </action-wrapper>

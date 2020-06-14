@@ -1,9 +1,9 @@
 <template>
   <action-wrapper>
-    <span @click="CATEGORY_BUILDER_SHOW(category)" title="Edit Category">
+    <span title="Edit Category" @click="CATEGORY_BUILDER_SHOW(category)">
       <icon-button icon="wrench" />
     </span>
-    <span @click="SURVEY_BUILDER_DELETE_CATEGORY(categoryName)" title="Delete Category">
+    <span title="Delete Category" @click="SURVEY_BUILDER_DELETE_CATEGORY(categoryName)">
       <icon-button />
     </span>
   </action-wrapper>

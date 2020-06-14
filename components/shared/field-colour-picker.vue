@@ -33,7 +33,7 @@ export default {
 
   data () {
     return {
-      colours: ['gray', 'red', 'blue', 'green']
+      colours: ['gray', 'red', 'blue', 'green', 'orange', 'yellow', 'purple']
     }
   }
 }
@@ -50,19 +50,31 @@ export default {
   margin: 5px 2.5px;
 
   &.gray {
-    background-color: gray;
+    background-color: #E2E2E2;
   }
 
   &.red {
-    background-color: #FE5F55;
+    background-color: #FF4E50;
   }
 
   &.blue {
-    background-color: #003FBA;
+    background-color: #476F95;
   }
 
   &.green {
-    background-color: #87B38D;
+    background-color: #3FB8AF;
+  }
+
+  &.orange {
+    background-color: #FC913A;
+  }
+
+  &.yellow {
+    background-color: #F9D423;
+  }
+
+  &.purple {
+    background-color: #AB526B;
   }
 
   &.selected {

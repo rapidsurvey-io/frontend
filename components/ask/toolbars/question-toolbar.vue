@@ -1,9 +1,9 @@
 <template>
   <action-wrapper>
-    <span @click="editQuestion" title="Edit Question">
+    <span title="Edit Question" @click="editQuestion">
       <icon-button icon="wrench" />
     </span>
-    <span @click="SURVEY_BUILDER_DELETE_QUESTION(questionId)" title="Delete Question">
+    <span title="Delete Question" @click="SURVEY_BUILDER_DELETE_QUESTION(questionId)">
       <icon-button />
     </span>
   </action-wrapper>
