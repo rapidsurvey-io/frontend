@@ -22,6 +22,7 @@
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
     "shortid": "^2.2.15",
+    "vue-star-rating": "^1.6.1",
     "vuex-persist": "^2.2.0"
   },
   "devDependencies": {

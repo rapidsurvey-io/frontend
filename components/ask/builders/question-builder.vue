@@ -51,6 +51,7 @@
         <option value="1">Yes or No</option>
         <option value="2">Free Text</option>
         <option value="4">Multi-line text</option>
+        <option value="5">Star Rating</option>
       </field-select>
     </template>
 

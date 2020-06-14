@@ -10,6 +10,7 @@
       <free-text-response v-if="responseType === '2'" />
       <dropdown-response v-if="responseType === '3'" :responses="responses" />
       <multiline-text-response v-if="responseType === '4'" />
+      <star-rating-response v-if="responseType === '5'" />
     </div>
 
     <question-toolbar
@@ -23,6 +24,7 @@ import YesNoResponse from '@/components/answer/responses/yesNo.vue'
 import FreeTextResponse from '@/components/answer/responses/freeText.vue'
 import DropdownResponse from '@/components/answer/responses/dropdown.vue'
 import MultilineTextResponse from '@/components/answer/responses/multilineText.vue'
+import StarRatingResponse from '@/components/answer/responses/star-rating.vue'
 
 export default {
   components: {
@@ -30,7 +32,8 @@ export default {
     YesNoResponse,
     FreeTextResponse,
     DropdownResponse,
-    MultilineTextResponse
+    MultilineTextResponse,
+    StarRatingResponse
   },
 
   props: {
