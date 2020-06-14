@@ -2,7 +2,7 @@
   <div
     class="c-survey-template u-pointer"
     @click="create">
-    <c-icon icon="envelope" class="fa-fw mr" />
+    <c-icon icon="envelope" class="fa-fw u-mr-small" />
     <span>Contact Form</span>
   </div>
 </template>

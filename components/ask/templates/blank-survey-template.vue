@@ -2,8 +2,8 @@
   <div
     class="c-survey-template u-pointer"
     @click="create">
-    <c-icon icon="star" class="fa-fw mr" />
-    <span>Blank survey</span>
+    <c-icon icon="file" class="fa-fw u-mr-small" />
+    <span>Blank Survey</span>
   </div>
 </template>
 
