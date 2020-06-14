@@ -1,15 +1,25 @@
 <template>
-  <div class="c-survey-list-item u-flex-container" @click="edit">
+  <div class="c-survey-list-item u-flex-container">
     <p
       class="u-grow"
       v-text="survey.surveyName" />
+
+    <survey-toolbar
+      @edit="edit"
+      @delete="DASHBOARD_DELETE_SURVEY(survey.surveyId)" />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
+import { DASHBOARD_DELETE_SURVEY } from '@/store/mutations.constants'
+import SurveyToolbar from '@/components/ask/toolbars/survey-toolbar.vue'
 
 export default {
+  components: {
+    SurveyToolbar
+  },
+
   props: {
     survey: {
       type: Object,
@@ -18,6 +28,10 @@ export default {
   },
 
   methods: {
+    ...mapMutations('dashboardSurveys', [
+      DASHBOARD_DELETE_SURVEY
+    ]),
+
     ...mapActions('activeSurvey', [
       'startTemplate'
     ]),
@@ -32,6 +46,7 @@ export default {
 
 <style scoped lang="scss">
   .c-survey-list-item {
+    position: relative;
     display: block;
     padding: 20px 20px;
     text-decoration: none;

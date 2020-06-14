@@ -1,5 +1,5 @@
 <template>
-  <section class="c-existing-survey-selector u-pointer">
+  <section class="c-existing-survey-selector">
     <div v-if="draftSurveys.length">
       <h2>Draft Surveys</h2>
       <p>Finish off a survey you already started and get answers fast!</p>

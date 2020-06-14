@@ -1,4 +1,7 @@
-import { DASHBOARD_SET_SURVEYS } from '@/store/mutations.constants'
+import {
+  DASHBOARD_SET_SURVEYS,
+  DASHBOARD_DELETE_SURVEY
+} from '@/store/mutations.constants'
 
 export const state = () => ({
   surveys: []
@@ -7,6 +10,10 @@ export const state = () => ({
 export const mutations = {
   [DASHBOARD_SET_SURVEYS]: (state, surveys) => {
     state.surveys = surveys
+  },
+
+  [DASHBOARD_DELETE_SURVEY]: (state, surveyId) => {
+    state.surveys = state.surveys.filter(svy => svy.surveyId !== surveyId)
   }
 }
 
