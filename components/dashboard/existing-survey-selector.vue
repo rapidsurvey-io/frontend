@@ -2,7 +2,7 @@
   <section class="c-existing-survey-selector">
     <div v-if="draftSurveys.length">
       <h2>Draft Surveys</h2>
-      <p>Finish off a survey you already started and get answers fast!</p>
+      <p>Start a new survey fast, we save changes automatically so you will see your new surveys here...</p>
       <div class="c-existing-survey-selector-body">
         <survey-list-item
           v-for="(survey, index) in draftSurveys"
