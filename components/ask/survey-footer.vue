@@ -2,11 +2,6 @@
   <div class="c-answer-footer a-slideInUp">
     <div class="c-answer-footer-inner">
       <tab-button
-        text="Save Survey"
-        icon="save"
-        :execute="save" />
-
-      <tab-button
         text="Ask Question"
         icon="plus"
         :execute="QUESTION_BUILDER_SHOW"
@@ -17,12 +12,9 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import SaveSurveyMixin from '@/mixins/save-survey.mixin.vue'
 import { QUESTION_BUILDER_SHOW } from '@/store/mutations.constants'
 
 export default {
-  mixins: [SaveSurveyMixin],
-
   methods: mapMutations('questionBuilder', [
     QUESTION_BUILDER_SHOW
   ])

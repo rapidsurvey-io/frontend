@@ -18,7 +18,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  categories: ({ questions }) =>
+  categoryNames: ({ questions }) =>
     new Set(questions.map(question => question.categoryName))
 }
 

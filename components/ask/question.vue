@@ -1,9 +1,9 @@
 <template>
   <div class="c-question c-question-wrapper">
     <h3 v-text="questionName" />
-    <p v-text="questionDescription" />
-
-    <br>
+    <p
+      v-show="questionDescription"
+      v-text="questionDescription" />
 
     <div>
       <yes-no-response v-if="responseType === '1'" />
@@ -92,6 +92,10 @@ export default {
   }
 
   h3 {
+    margin-bottom: 10px;
+  }
+
+  p {
     margin-bottom: 10px;
   }
 </style>

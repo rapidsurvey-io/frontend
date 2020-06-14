@@ -14,7 +14,7 @@
         label="Which category should the question belong too?">
         <option value="new">Create a new category</option>
         <option
-          v-for="(selectedCategoryName, index) in categories"
+          v-for="(selectedCategoryName, index) in categoryNames"
           :key="index"
           :value="selectedCategoryName"
           v-text="selectedCategoryName" />
@@ -103,7 +103,7 @@ export default {
     ]),
 
     ...mapGetters('surveyBuilder', [
-      'categories'
+      'categoryNames'
     ])
   },
 
@@ -113,8 +113,8 @@ export default {
       this.categoryName = value === 'new' ? '' : value
     },
     showQuestionBuilder (value) {
-      if (value === true && this.categories.size > 0) {
-        this.categorySelection = this.categories.values().next().value
+      if (value === true && this.categoryNames.size > 0) {
+        this.categorySelection = this.categoryNames.values().next().value
       }
     }
   },

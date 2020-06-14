@@ -3,7 +3,7 @@
     <survey-heading />
 
     <category
-      v-for="(category, index) in categories"
+      v-for="(category, index) in categoryNames"
       :key="index"
       class="a-fadeIn"
       :category-name="category" />
@@ -23,12 +23,18 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Category from '@/components/ask/category.vue'
+import SaveSurveyMixin from '@/mixins/save-survey.mixin.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
 import SurveyHeading from '@/components/ask/survey-heading.vue'
 import SurveyFooter from '@/components/ask/survey-footer.vue'
 
 export default {
+  beforeRouteLeave (to, from, next) {
+    this.save()
+    next()
+  },
+
   components: {
     Category,
     QuestionBuilder,
@@ -37,9 +43,13 @@ export default {
     SurveyFooter
   },
 
+  mixins: [
+    SaveSurveyMixin
+  ],
+
   computed: {
     ...mapGetters('surveyBuilder', [
-      'categories'
+      'categoryNames'
     ]),
 
     ...mapState('surveyBuilder', [
