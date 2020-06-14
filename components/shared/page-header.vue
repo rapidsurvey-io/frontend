@@ -1,7 +1,6 @@
 <template functional>
   <div class="c-page-header">
-    <slot
-      name="heading" />
+    <slot />
   </div>
 </template>
 

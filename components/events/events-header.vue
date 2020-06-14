@@ -1,10 +1,8 @@
 <template>
   <div class="c-events">
     <page-header>
-      <template slot="heading">
-        <h2>Recent Events</h2>
-        <p>Start a new Survey or edit an existing one below.</p>
-      </template>
+      <h2>Recent Events</h2>
+      <p>Start a new Survey or edit an existing one below.</p>
     </page-header>
   </div>
 </template>

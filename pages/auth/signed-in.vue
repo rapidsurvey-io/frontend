@@ -1,9 +1,7 @@
 <template functional>
   <page-header>
-    <template slot="heading">
-      <c-icon icon="spinner" class="fa-spin fa-fw" />
-      <p>Signing in...</p>
-    </template>
+    <c-icon icon="spinner" class="fa-spin fa-fw" />
+    <p>Signing in...</p>
   </page-header>
 </template>
 

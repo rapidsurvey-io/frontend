@@ -2,11 +2,9 @@
   <div class="u-flex-normal">
     <div class="u-flex-grow">
       <page-header>
-        <template slot="heading">
-          <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
-          <h1>Welcome Back {{ $auth.user.given_name }}</h1>
-          <p>Start a new Survey or edit an existing one below.</p>
-        </template>
+        <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
+        <h1>Welcome Back {{ $auth.user.given_name }}</h1>
+        <p>Start a new Survey or edit an existing one below.</p>
       </page-header>
 
       <survey-template-selector />

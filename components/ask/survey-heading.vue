@@ -1,16 +1,14 @@
 <template>
   <page-header>
-    <template slot="heading">
-      <editable-element
-        element="h1"
-        :text="surveyName"
-        @component-updated="SURVEY_BUILDER_SET_SURVEY_NAME" />
+    <editable-element
+      element="h1"
+      :text="surveyName"
+      @component-updated="SURVEY_BUILDER_SET_SURVEY_NAME" />
 
-      <editable-element
-        element="p"
-        :text="surveyDescription"
-        @component-updated="SURVEY_BUILDER_SET_SURVEY_DESCRIPTION" />
-    </template>
+    <editable-element
+      element="p"
+      :text="surveyDescription"
+      @component-updated="SURVEY_BUILDER_SET_SURVEY_DESCRIPTION" />
   </page-header>
 </template>
 
