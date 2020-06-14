@@ -1,30 +1,24 @@
 <template>
-  <div class="u-flex-normal">
-    <div class="u-flex-grow">
-      <page-header>
-        <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
-        <h1>Welcome Back {{ $auth.user.given_name }}</h1>
-        <p>Start a new Survey or edit an existing one below.</p>
-      </page-header>
+  <div>
+    <page-header>
+      <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
+      <h1>Welcome Back {{ $auth.user.given_name }}</h1>
+      <p>Start a new Survey or edit an existing one below.</p>
+    </page-header>
 
-      <survey-template-selector />
-      <existing-survey-selector />
-    </div>
-
-    <events-header class="u-hidden-tablet" />
+    <survey-template-selector />
+    <existing-survey-selector />
   </div>
 </template>
 
 <script>
 import SurveyTemplateSelector from '@/components/ask/templates/survey-template-selector.vue'
 import ExistingSurveySelector from '@/components/dashboard/existing-survey-selector.vue'
-import EventsHeader from '@/components/events/events-header.vue'
 
 export default {
   components: {
     SurveyTemplateSelector,
-    ExistingSurveySelector,
-    EventsHeader
+    ExistingSurveySelector
   },
 
   created () {
@@ -44,10 +38,6 @@ export default {
 </script>
 
 <style scoped>
-.u-flex-normal {
-  display: flex;
-}
-
 .c-avatar {
   float: left;
   height: 100px;
