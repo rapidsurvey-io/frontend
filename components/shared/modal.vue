@@ -43,7 +43,7 @@ export default {
   background-color: white;
   z-index: 20;
   width: 600px;
-  max-width: 90%;
+  max-width: 95%;
   border-radius: 10px;
 }
 

@@ -70,7 +70,7 @@
             type="button" />
 
           <square-button
-            text="Add Question"
+            text="Add"
             is-primary />
         </div>
       </div>
