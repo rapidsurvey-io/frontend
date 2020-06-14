@@ -21,16 +21,18 @@ export default {
     },
 
     save () {
-      this.setSurvey(
-        SurveyModelGenerator(
-          this.surveyId,
-          this.surveyName,
-          this.surveyDescription,
-          'draft',
-          this.questions,
-          this.categories
+      if (this.questions.length) {
+        this.setSurvey(
+          SurveyModelGenerator(
+            this.surveyId,
+            this.surveyName,
+            this.surveyDescription,
+            'draft',
+            this.questions,
+            this.categories
+          )
         )
-      )
+      }
     }
   }
 }
