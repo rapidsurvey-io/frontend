@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <survey-heading />
 
     <category
@@ -17,7 +17,7 @@
 
       <survey-footer />
     </client-only>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -55,20 +55,23 @@
     </template>
 
     <template v-slot:footer>
-      <square-button
-        text="Add Description"
-        :execute="showDescription"
-        type="button" />
-
-      <div class="u-float-right">
+      <div class="u-float-container">
         <square-button
-          text="Cancel"
-          :execute="QUESTION_BUILDER_HIDE"
+          v-if="!showDescriptionField"
+          text="Add Description"
+          :execute="showDescription"
           type="button" />
 
-        <square-button
-          text="Add Question"
-          is-primary />
+        <div class="u-float-right">
+          <square-button
+            text="Cancel"
+            :execute="QUESTION_BUILDER_HIDE"
+            type="button" />
+
+          <square-button
+            text="Add Question"
+            is-primary />
+        </div>
       </div>
     </template>
   </modal>

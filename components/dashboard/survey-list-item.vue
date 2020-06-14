@@ -1,6 +1,6 @@
 <template>
   <div class="c-survey-list-item u-flex-container">
-    <div class="u-grow">
+    <div class="u-flex-grow">
       <h3 v-text="survey.surveyName" />
       <p v-text="survey.surveyDescription" />
     </div>
