@@ -15,6 +15,9 @@
       <category-builder
         v-if="showCategoryBuilder" />
 
+      <publish-survey-builder
+        v-if="showPublishBuilder" />
+
       <survey-footer />
     </client-only>
   </div>
@@ -26,6 +29,7 @@ import Category from '@/components/ask/category.vue'
 import SaveSurveyMixin from '@/mixins/save-survey.mixin.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
+import PublishSurveyBuilder from '@/components/ask/builders/publish-builder.vue'
 import SurveyHeading from '@/components/ask/survey-heading.vue'
 import SurveyFooter from '@/components/ask/survey-footer.vue'
 
@@ -39,6 +43,7 @@ export default {
     Category,
     QuestionBuilder,
     CategoryBuilder,
+    PublishSurveyBuilder,
     SurveyHeading,
     SurveyFooter
   },
@@ -55,7 +60,8 @@ export default {
     ...mapState('surveyBuilder', [
       'surveyName',
       'surveyDescription',
-      'questions'
+      'questions',
+      'showPublishBuilder'
     ]),
 
     ...mapState('categoryBuilder', [

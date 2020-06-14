@@ -6,7 +6,9 @@ import {
   SURVEY_BUILDER_SET_SURVEY_DESCRIPTION,
   SURVEY_BUILDER_SET_SURVEY_QUESTIONS,
   SURVEY_BUILDER_SET_SURVEY_CATEGORIES,
-  SURVEY_BUILDER_UPDATE_CATEGORY_NAME
+  SURVEY_BUILDER_UPDATE_CATEGORY_NAME,
+  SURVEY_BUILDER_SHOW_PUBLISH_MODAL,
+  SURVEY_BUILDER_HIDE_PUBLISH_MODAL
 } from '@/store/mutations.constants'
 
 export const state = () => ({
@@ -14,7 +16,8 @@ export const state = () => ({
   surveyName: 'Blank Survey',
   surveyDescription: 'Click me to change the name and description of this survey',
   questions: [],
-  categories: []
+  categories: [],
+  showPublishBuilder: false
 })
 
 export const getters = {
@@ -57,6 +60,14 @@ export const mutations = {
       .forEach((question) => {
         question.categoryName = newCategoryName
       })
+  },
+
+  [SURVEY_BUILDER_SHOW_PUBLISH_MODAL]: (state) => {
+    state.showPublishBuilder = true
+  },
+
+  [SURVEY_BUILDER_HIDE_PUBLISH_MODAL]: (state) => {
+    state.showPublishBuilder = false
   }
 }
 

@@ -2,6 +2,10 @@
   <div class="c-answer-footer a-slideInUp">
     <div class="c-answer-footer-inner">
       <tab-button
+        text="Publish"
+        icon="share-alt"
+        :execute="SURVEY_BUILDER_SHOW_PUBLISH_MODAL" />
+      <tab-button
         text="Ask Question"
         icon="plus"
         :execute="QUESTION_BUILDER_SHOW"
@@ -12,12 +16,18 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import { QUESTION_BUILDER_SHOW } from '@/store/mutations.constants'
+import { QUESTION_BUILDER_SHOW, SURVEY_BUILDER_SHOW_PUBLISH_MODAL } from '@/store/mutations.constants'
 
 export default {
-  methods: mapMutations('questionBuilder', [
-    QUESTION_BUILDER_SHOW
-  ])
+  methods: {
+    ...mapMutations('questionBuilder', [
+      QUESTION_BUILDER_SHOW
+    ]),
+
+    ...mapMutations('surveyBuilder', [
+      SURVEY_BUILDER_SHOW_PUBLISH_MODAL
+    ])
+  }
 }
 </script>
 

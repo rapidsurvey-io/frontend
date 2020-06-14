@@ -26,14 +26,18 @@
     </template>
 
     <template v-slot:footer>
-      <square-button
-        text="Cancel"
-        :execute="CATEGORY_BUILDER_HIDE"
-        type="button" />
+      <div class="u-float-container">
+        <div class="u-float-right">
+          <square-button
+            text="Cancel"
+            :execute="CATEGORY_BUILDER_HIDE"
+            type="button" />
 
-      <square-button
-        text="Save Changes"
-        is-primary />
+          <square-button
+            text="Save Changes"
+            is-primary />
+        </div>
+      </div>
     </template>
   </modal>
 </template>
