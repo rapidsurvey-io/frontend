@@ -99,7 +99,7 @@ export default {
       'questionToEdit'
     ]),
 
-    ...mapGetters('activeSurvey', [
+    ...mapGetters('surveyBuilder', [
       'categories'
     ])
   },
@@ -136,7 +136,7 @@ export default {
       QUESTION_BUILDER_HIDE
     ]),
 
-    ...mapActions('activeSurvey', [
+    ...mapActions('surveyBuilder', [
       'updateQuestion'
     ]),
 

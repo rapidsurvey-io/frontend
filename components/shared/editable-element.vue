@@ -29,7 +29,7 @@ export default {
   methods: {
     updateComponent: Debounce(function (event) {
       this.$emit('component-updated', event.target.textContent)
-    }, 3000)
+    }, 1500)
   }
 }
 </script>

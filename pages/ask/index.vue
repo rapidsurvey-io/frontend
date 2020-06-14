@@ -2,7 +2,7 @@
   <section>
     <survey-heading />
 
-    <answer-category
+    <category
       v-for="(category, index) in categories"
       :key="index"
       class="a-fadeIn"
@@ -15,34 +15,34 @@
       <category-builder
         v-if="showCategoryBuilder" />
 
-      <ask-footer />
+      <survey-footer />
     </client-only>
   </section>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import AnswerCategory from '@/components/answer/category.vue'
+import Category from '@/components/ask/category.vue'
 import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
 import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
-import AskFooter from '@/components/ask/ask-footer.vue'
-import SurveyHeading from '@/components/answer/survey-heading.vue'
+import SurveyHeading from '@/components/ask/survey-heading.vue'
+import SurveyFooter from '@/components/ask/survey-footer.vue'
 
 export default {
   components: {
-    AnswerCategory,
+    Category,
     QuestionBuilder,
     CategoryBuilder,
-    AskFooter,
-    SurveyHeading
+    SurveyHeading,
+    SurveyFooter
   },
 
   computed: {
-    ...mapGetters('activeSurvey', [
+    ...mapGetters('surveyBuilder', [
       'categories'
     ]),
 
-    ...mapState('activeSurvey', [
+    ...mapState('surveyBuilder', [
       'surveyName',
       'surveyDescription',
       'questions'

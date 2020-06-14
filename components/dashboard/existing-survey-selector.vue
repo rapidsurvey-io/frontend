@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div v-if="draftSurveys.length">
+    <!-- <div v-if="draftSurveys.length">
       <h2>Published Surveys</h2>
       <p>Check out the surveys you have published recently to see who has responded.</p>
       <div class="c-existing-survey-selector-body">
@@ -20,7 +20,7 @@
           :key="index"
           :survey="survey" />
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 

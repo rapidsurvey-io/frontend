@@ -1,12 +1,12 @@
 import {
-  ACTIVE_SURVEY_DELETE_QUESTION,
-  ACTIVE_SURVEY_DELETE_CATEGORY,
-  ACTIVE_SURVEY_SET_SURVEY_ID,
-  ACTIVE_SURVEY_SET_SURVEY_NAME,
-  ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION,
-  ACTIVE_SURVEY_SET_SURVEY_QUESTIONS,
-  ACTIVE_SURVEY_SET_SURVEY_CATEGORIES,
-  ACTIVE_SURVEY_UPDATE_CATEGORY_NAME
+  SURVEY_BUILDER_DELETE_QUESTION,
+  SURVEY_BUILDER_DELETE_CATEGORY,
+  SURVEY_BUILDER_SET_SURVEY_ID,
+  SURVEY_BUILDER_SET_SURVEY_NAME,
+  SURVEY_BUILDER_SET_SURVEY_DESCRIPTION,
+  SURVEY_BUILDER_SET_SURVEY_QUESTIONS,
+  SURVEY_BUILDER_SET_SURVEY_CATEGORIES,
+  SURVEY_BUILDER_UPDATE_CATEGORY_NAME
 } from '@/store/mutations.constants'
 
 export const state = () => ({
@@ -23,35 +23,35 @@ export const getters = {
 }
 
 export const mutations = {
-  [ACTIVE_SURVEY_SET_SURVEY_ID]: (state, surveyId) => {
+  [SURVEY_BUILDER_SET_SURVEY_ID]: (state, surveyId) => {
     state.surveyId = surveyId
   },
 
-  [ACTIVE_SURVEY_DELETE_QUESTION]: (state, questionId) => {
+  [SURVEY_BUILDER_DELETE_QUESTION]: (state, questionId) => {
     state.questions = state.questions.filter(question => question.questionId !== questionId)
   },
 
-  [ACTIVE_SURVEY_DELETE_CATEGORY]: (state, categoryName) => {
+  [SURVEY_BUILDER_DELETE_CATEGORY]: (state, categoryName) => {
     state.categories = state.categories.filter(cat => cat.categoryName !== categoryName)
   },
 
-  [ACTIVE_SURVEY_SET_SURVEY_NAME]: (state, surveyName) => {
+  [SURVEY_BUILDER_SET_SURVEY_NAME]: (state, surveyName) => {
     state.surveyName = surveyName
   },
 
-  [ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION]: (state, surveyDescription) => {
+  [SURVEY_BUILDER_SET_SURVEY_DESCRIPTION]: (state, surveyDescription) => {
     state.surveyDescription = surveyDescription
   },
 
-  [ACTIVE_SURVEY_SET_SURVEY_QUESTIONS]: (state, questions) => {
+  [SURVEY_BUILDER_SET_SURVEY_QUESTIONS]: (state, questions) => {
     state.questions = questions
   },
 
-  [ACTIVE_SURVEY_SET_SURVEY_CATEGORIES]: (state, categories) => {
+  [SURVEY_BUILDER_SET_SURVEY_CATEGORIES]: (state, categories) => {
     state.categories = categories
   },
 
-  [ACTIVE_SURVEY_UPDATE_CATEGORY_NAME]: (state, { oldCategoryName, newCategoryName }) => {
+  [SURVEY_BUILDER_UPDATE_CATEGORY_NAME]: (state, { oldCategoryName, newCategoryName }) => {
     state.questions
       .filter(qst => qst.categoryName === oldCategoryName)
       .forEach((question) => {
@@ -62,27 +62,27 @@ export const mutations = {
 
 export const actions = {
   startTemplate: ({ commit }, { questions, surveyId, surveyName, surveyDescription, categories }) => {
-    commit(ACTIVE_SURVEY_SET_SURVEY_ID, surveyId)
-    commit(ACTIVE_SURVEY_SET_SURVEY_NAME, surveyName)
-    commit(ACTIVE_SURVEY_SET_SURVEY_DESCRIPTION, surveyDescription)
-    commit(ACTIVE_SURVEY_SET_SURVEY_CATEGORIES, categories || [])
-    commit(ACTIVE_SURVEY_SET_SURVEY_QUESTIONS, questions || [])
+    commit(SURVEY_BUILDER_SET_SURVEY_ID, surveyId)
+    commit(SURVEY_BUILDER_SET_SURVEY_NAME, surveyName)
+    commit(SURVEY_BUILDER_SET_SURVEY_DESCRIPTION, surveyDescription)
+    commit(SURVEY_BUILDER_SET_SURVEY_CATEGORIES, categories || [])
+    commit(SURVEY_BUILDER_SET_SURVEY_QUESTIONS, questions || [])
   },
 
   updateQuestion: ({ commit, state }, question) => {
-    commit(ACTIVE_SURVEY_DELETE_QUESTION, question.questionId)
+    commit(SURVEY_BUILDER_DELETE_QUESTION, question.questionId)
 
     const questions = [
       ...state.questions,
       question
     ]
 
-    commit(ACTIVE_SURVEY_SET_SURVEY_QUESTIONS, questions)
+    commit(SURVEY_BUILDER_SET_SURVEY_QUESTIONS, questions)
   },
 
   updateCategory: ({ commit, state }, { oldCategoryName, newCategoryName, newCategoryDescription, colourCode }) => {
-    commit(ACTIVE_SURVEY_UPDATE_CATEGORY_NAME, { oldCategoryName, newCategoryName })
-    commit(ACTIVE_SURVEY_DELETE_CATEGORY, oldCategoryName)
+    commit(SURVEY_BUILDER_UPDATE_CATEGORY_NAME, { oldCategoryName, newCategoryName })
+    commit(SURVEY_BUILDER_DELETE_CATEGORY, oldCategoryName)
 
     const categories = [...state.categories]
 
@@ -92,6 +92,6 @@ export const actions = {
       colourCode
     })
 
-    commit(ACTIVE_SURVEY_SET_SURVEY_CATEGORIES, categories)
+    commit(SURVEY_BUILDER_SET_SURVEY_CATEGORIES, categories)
   }
 }

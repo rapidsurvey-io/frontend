@@ -3,7 +3,7 @@ import { mapState, mapActions } from 'vuex'
 import SurveyModelGenerator from '@/models/survey.js'
 
 export default {
-  computed: mapState('activeSurvey', [
+  computed: mapState('surveyBuilder', [
     'surveyId',
     'surveyName',
     'surveyDescription',

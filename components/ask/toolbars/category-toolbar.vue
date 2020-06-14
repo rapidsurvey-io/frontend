@@ -3,7 +3,7 @@
     <span @click="CATEGORY_BUILDER_SHOW(category)">
       <icon-button icon="wrench" />
     </span>
-    <span @click="ACTIVE_SURVEY_DELETE_CATEGORY(categoryName)">
+    <span @click="SURVEY_BUILDER_DELETE_CATEGORY(categoryName)">
       <icon-button />
     </span>
   </action-wrapper>
@@ -11,7 +11,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { CATEGORY_BUILDER_SHOW, ACTIVE_SURVEY_DELETE_CATEGORY } from '@/store/mutations.constants'
+import { CATEGORY_BUILDER_SHOW, SURVEY_BUILDER_DELETE_CATEGORY } from '@/store/mutations.constants'
 
 export default {
   props: {
@@ -22,7 +22,7 @@ export default {
   },
 
   computed: {
-    ...mapState('activeSurvey', [
+    ...mapState('surveyBuilder', [
       'categories'
     ]),
 
@@ -38,8 +38,8 @@ export default {
   },
 
   methods: {
-    ...mapMutations('activeSurvey', [
-      ACTIVE_SURVEY_DELETE_CATEGORY
+    ...mapMutations('surveyBuilder', [
+      SURVEY_BUILDER_DELETE_CATEGORY
     ]),
 
     ...mapMutations('categoryBuilder', [

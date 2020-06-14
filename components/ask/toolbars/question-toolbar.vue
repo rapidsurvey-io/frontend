@@ -3,7 +3,7 @@
     <span @click="editQuestion">
       <icon-button icon="wrench" />
     </span>
-    <span @click="ACTIVE_SURVEY_DELETE_QUESTION(questionId)">
+    <span @click="SURVEY_BUILDER_DELETE_QUESTION(questionId)">
       <icon-button />
     </span>
   </action-wrapper>
@@ -11,7 +11,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { QUESTION_BUILDER_SET_EDIT_SURVEY, QUESTION_BUILDER_SHOW, ACTIVE_SURVEY_DELETE_QUESTION } from '@/store/mutations.constants'
+import { QUESTION_BUILDER_SET_EDIT_SURVEY, QUESTION_BUILDER_SHOW, SURVEY_BUILDER_DELETE_QUESTION } from '@/store/mutations.constants'
 
 export default {
   props: {
@@ -21,13 +21,13 @@ export default {
     }
   },
 
-  computed: mapState('activeSurvey', [
+  computed: mapState('surveyBuilder', [
     'questions'
   ]),
 
   methods: {
-    ...mapMutations('activeSurvey', [
-      ACTIVE_SURVEY_DELETE_QUESTION
+    ...mapMutations('surveyBuilder', [
+      SURVEY_BUILDER_DELETE_QUESTION
     ]),
 
     ...mapMutations('questionBuilder', [

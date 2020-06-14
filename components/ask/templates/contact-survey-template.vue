@@ -33,7 +33,7 @@ export default {
   },
 
   methods: {
-    ...mapActions('activeSurvey', [
+    ...mapActions('surveyBuilder', [
       'startTemplate'
     ]),
 

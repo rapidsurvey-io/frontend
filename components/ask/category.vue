@@ -11,7 +11,7 @@
     </div>
 
     <div class="c-category-questions">
-      <answer-question
+      <question
         v-for="(question, index) in questionsInCategory"
         :key="index"
         v-bind="question" />
@@ -25,12 +25,12 @@
 <script>
 import { mapState } from 'vuex'
 import CategoryToolbar from '@/components/ask/toolbars/category-toolbar.vue'
-import AnswerQuestion from '@/components/answer/question.vue'
+import Question from '@/components/ask/question.vue'
 
 export default {
   components: {
     CategoryToolbar,
-    AnswerQuestion
+    Question
   },
 
   props: {
@@ -41,7 +41,7 @@ export default {
   },
 
   computed: {
-    ...mapState('activeSurvey', [
+    ...mapState('surveyBuilder', [
       'questions',
       'categories'
     ]),

@@ -67,7 +67,7 @@ export default {
       CATEGORY_BUILDER_HIDE
     ]),
 
-    ...mapActions('activeSurvey', [
+    ...mapActions('surveyBuilder', [
       'updateCategory'
     ]),
 

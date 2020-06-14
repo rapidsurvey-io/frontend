@@ -1,8 +1,9 @@
 <template>
   <div class="c-survey-list-item u-flex-container">
-    <p
-      class="u-grow"
-      v-text="survey.surveyName" />
+    <div class="u-grow">
+      <h3 v-text="survey.surveyName" />
+      <p v-text="survey.surveyDescription" />
+    </div>
 
     <survey-toolbar
       @edit="edit"
@@ -32,7 +33,7 @@ export default {
       DASHBOARD_DELETE_SURVEY
     ]),
 
-    ...mapActions('activeSurvey', [
+    ...mapActions('surveyBuilder', [
       'startTemplate'
     ]),
 
