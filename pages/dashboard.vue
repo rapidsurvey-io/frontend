@@ -1,9 +1,15 @@
 <template>
   <div>
     <page-header>
-      <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
-      <h1>Welcome Back {{ $auth.user.given_name }}</h1>
-      <p>Start a new Survey or edit an existing one below.</p>
+      <template v-if="$auth.loggedIn">
+        <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
+        <h1>Welcome Back {{ $auth.user.given_name }}</h1>
+        <p>Start a new Survey or edit an existing one below.</p>
+      </template>
+      <template v-else>
+        <h1>Dashboard</h1>
+        <p>Start a new Survey or edit an existing one below.</p>
+      </template>
     </page-header>
 
     <survey-template-selector />
@@ -29,11 +35,7 @@ export default {
     return {
       title: 'RapidSurvey.io | Dashboard'
     }
-  },
-
-  middleware: [
-    'auth'
-  ]
+  }
 }
 </script>
 

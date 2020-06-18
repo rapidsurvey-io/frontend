@@ -81,10 +81,6 @@ export default {
     return {
       title: 'RapidSurvey.io | Edit Survey'
     }
-  },
-
-  middleware: [
-    'auth'
-  ]
+  }
 }
 </script>
