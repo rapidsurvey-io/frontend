@@ -1,9 +1,12 @@
 <template>
   <div class="c-question c-question-wrapper">
-    <h3 v-text="questionName" />
-    <p
-      v-show="questionDescription"
-      v-text="questionDescription" />
+    <div class="c-question-definition">
+      <h3
+        v-text="questionName" />
+      <p
+        v-show="questionDescription"
+        v-text="questionDescription" />
+    </div>
 
     <div>
       <yes-no-response v-if="responseType === '1'" />
@@ -71,8 +74,8 @@ export default {
     width: 600px;
     max-width: 90%;
     margin: 0 auto;
-    margin-right: 120px;
-    margin-bottom: 30px;
+    margin-right: 200px;
+    margin-bottom: 50px;
     min-height: 150px;
     background-color: white;
     z-index: 1;
@@ -91,7 +94,7 @@ export default {
   }
 
   .c-question {
-    padding: 30px;
+    padding: 40px;
   }
 
   h3 {
@@ -100,5 +103,9 @@ export default {
 
   p {
     margin-bottom: 10px;
+  }
+
+  .c-question-definition {
+    margin-bottom: 20px;
   }
 </style>

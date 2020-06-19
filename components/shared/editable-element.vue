@@ -39,7 +39,7 @@ export default {
   outline: 0;
   border: 1px solid transparent;
   transition: border 0.2s ease-in-out;
-  padding: 5px 10px;
+  padding: 10px 5px;
   border-radius: 10px;
 
   &:hover, &:active, &:focus {
