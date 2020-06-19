@@ -1,7 +1,7 @@
 <template>
   <section class="c-brand-navigator">
     <logo />
-    <auth />
+    <auth v-if="false" />
   </section>
 </template>
 

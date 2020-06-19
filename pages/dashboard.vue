@@ -35,7 +35,11 @@ export default {
     return {
       title: 'RapidSurvey.io | Dashboard'
     }
-  }
+  },
+
+  middleware: [
+    'identificationMiddleware'
+  ]
 }
 </script>
 
