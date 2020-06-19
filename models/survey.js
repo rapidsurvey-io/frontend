@@ -1,10 +1,11 @@
-export default (surveyId, surveyName, surveyDescription, status, questions, categories) => {
+export default (surveyId, surveyName, surveyDescription, status, questions, categories, creatorIdentifier) => {
   return {
     surveyId,
     surveyName,
     surveyDescription,
     status,
     questions: questions || [],
-    categories: categories || []
+    categories: categories || [],
+    owner: creatorIdentifier
   }
 }
