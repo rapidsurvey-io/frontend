@@ -14,8 +14,6 @@
 
 <script>
 export default {
-  name: 'FieldInput',
-
   props: {
     label: {
       type: String,

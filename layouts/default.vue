@@ -9,8 +9,7 @@
 import '@/styles/animation.scss'
 import '@/styles/utilities.scss'
 
-export default {
-}
+export default {}
 </script>
 
 <style lang="scss">

@@ -17,6 +17,8 @@ export default {
     '@nuxtjs/eslint-module'
   ],
 
+  components: true,
+
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
@@ -58,7 +60,6 @@ export default {
 
   plugins: [
     '~/plugins/fontawesome.plugin.js',
-    '~/plugins/sharedComponents.plugin.js',
     { src: '~/plugins/state-persist', ssr: false }
   ],
 
@@ -70,5 +71,5 @@ export default {
     google: {
       families: ['Karla:400,400&display=swap']
     }
-  },
+  }
 }

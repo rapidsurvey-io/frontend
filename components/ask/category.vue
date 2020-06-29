@@ -24,15 +24,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import CategoryToolbar from '@/components/ask/toolbars/category-toolbar.vue'
-import Question from '@/components/ask/question.vue'
 
 export default {
-  components: {
-    CategoryToolbar,
-    Question
-  },
-
   props: {
     categoryName: {
       type: String,

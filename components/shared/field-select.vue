@@ -15,8 +15,6 @@
 
 <script>
 export default {
-  name: 'FieldSelect',
-
   props: {
     label: {
       type: String,

@@ -7,8 +7,6 @@
 
 <script>
 export default {
-  name: 'PageContent',
-
   props: {
     isPadded: {
       type: Boolean,

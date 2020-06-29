@@ -14,8 +14,6 @@
 
 <script>
 export default {
-  name: 'SquareButton',
-
   props: {
     text: {
       type: String,

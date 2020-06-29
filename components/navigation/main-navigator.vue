@@ -4,18 +4,6 @@
   </section>
 </template>
 
-<script>
-import Logo from '@/components/navigation/logo.vue'
-
-export default {
-  name: 'MainNavigator',
-
-  components: {
-    Logo
-  }
-}
-</script>
-
 <style scoped>
   .c-brand-navigator {
     position: absolute;

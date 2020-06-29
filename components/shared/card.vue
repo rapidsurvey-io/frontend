@@ -8,8 +8,6 @@
 
 <script>
 export default {
-  name: 'Card',
-
   props: {
     borderColour: {
       type: String,

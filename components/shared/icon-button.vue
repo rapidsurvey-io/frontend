@@ -8,8 +8,6 @@
 
 <script>
 export default {
-  name: 'IconButton',
-
   props: {
     icon: {
       type: String,

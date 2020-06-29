@@ -17,8 +17,6 @@
 
 <script>
 export default {
-  name: 'PageHero',
-
   props: {
     showBreadcrumb: {
       type: Boolean,

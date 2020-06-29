@@ -21,8 +21,6 @@
 
 <script>
 export default {
-  name: 'Modal',
-
   props: {
     submitFunction: {
       type: Function,
@@ -34,6 +32,7 @@ export default {
 
 <style scoped>
 .c-overlay {
+  position: fixed;
   display: flex;
   align-items: center;
 }

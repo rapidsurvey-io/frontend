@@ -19,8 +19,6 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  name: 'Breadcrumb',
-
   computed: mapState('breadcrumb', [
     'links'
   ])

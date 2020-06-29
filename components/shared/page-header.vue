@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'PageHeader'
-}
-</script>
-
 <style scoped lang="scss">
   .c-page-header {
     position: relative;

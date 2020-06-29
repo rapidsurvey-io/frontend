@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  name: 'Overlay',
   props: {
     isFullPage: {
       type: Boolean,

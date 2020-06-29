@@ -9,11 +9,11 @@
     </div>
 
     <div>
-      <yes-no-response v-if="responseType === '1'" />
-      <free-text-response v-if="responseType === '2'" />
-      <dropdown-response v-if="responseType === '3'" :responses="responses" />
-      <multiline-text-response v-if="responseType === '4'" />
-      <star-rating-response v-if="responseType === '5'" />
+      <yes-no v-if="responseType === '1'" />
+      <free-text v-if="responseType === '2'" />
+      <dropdown v-if="responseType === '3'" :responses="responses" />
+      <multiline-text v-if="responseType === '4'" />
+      <star-rating v-if="responseType === '5'" />
     </div>
 
     <question-toolbar
@@ -22,23 +22,7 @@
 </template>
 
 <script>
-import QuestionToolbar from '@/components/ask/toolbars/question-toolbar.vue'
-import YesNoResponse from '@/components/answer/responses/yesNo.vue'
-import FreeTextResponse from '@/components/answer/responses/freeText.vue'
-import DropdownResponse from '@/components/answer/responses/dropdown.vue'
-import MultilineTextResponse from '@/components/answer/responses/multilineText.vue'
-import StarRatingResponse from '@/components/answer/responses/star-rating.vue'
-
 export default {
-  components: {
-    QuestionToolbar,
-    YesNoResponse,
-    FreeTextResponse,
-    DropdownResponse,
-    MultilineTextResponse,
-    StarRatingResponse
-  },
-
   props: {
     questionId: {
       type: String,

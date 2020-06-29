@@ -13,8 +13,6 @@
 import Debounce from '@/services/debounce.js'
 
 export default {
-  name: 'EditableElement',
-
   props: {
     element: {
       type: String,

@@ -17,8 +17,6 @@
 
 <script>
 export default {
-  name: 'FieldColourPicker',
-
   props: {
     label: {
       type: String,

@@ -14,13 +14,8 @@
 <script>
 import { mapMutations, mapActions } from 'vuex'
 import { DASHBOARD_DELETE_SURVEY } from '@/store/mutations.constants'
-import SurveyToolbar from '@/components/ask/toolbars/survey-toolbar.vue'
 
 export default {
-  components: {
-    SurveyToolbar
-  },
-
   props: {
     survey: {
       type: Object,

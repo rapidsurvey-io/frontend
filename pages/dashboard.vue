@@ -12,15 +12,7 @@
 </template>
 
 <script>
-import SurveyTemplateSelector from '@/components/ask/templates/survey-template-selector.vue'
-import ExistingSurveySelector from '@/components/dashboard/existing-survey-selector.vue'
-
 export default {
-  components: {
-    SurveyTemplateSelector,
-    ExistingSurveySelector
-  },
-
   created () {
     this.$store.dispatch('breadcrumb/set', [{ icon: 'list-alt', title: 'Dashboard', href: '/dashboard' }])
   },

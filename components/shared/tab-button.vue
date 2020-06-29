@@ -13,7 +13,6 @@
 
 <script>
 export default {
-  name: 'TabButton',
   props: {
     text: {
       type: String,

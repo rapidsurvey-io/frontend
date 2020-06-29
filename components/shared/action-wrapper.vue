@@ -4,12 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ActionWrapper'
-}
-</script>
-
 <style scoped>
   .c-action-wrapper {
     position: absolute;

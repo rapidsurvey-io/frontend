@@ -13,8 +13,6 @@
 
 <script>
 export default {
-  name: 'FieldTextarea',
-
   props: {
     label: {
       type: String,

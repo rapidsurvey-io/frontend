@@ -29,27 +29,12 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import Category from '@/components/ask/category.vue'
 import SaveSurveyMixin from '@/mixins/save-survey.mixin.vue'
-import QuestionBuilder from '@/components/ask/builders/question-builder.vue'
-import CategoryBuilder from '@/components/ask/builders/category-builder.vue'
-import PublishSurveyBuilder from '@/components/ask/builders/publish-builder.vue'
-import SurveyHeading from '@/components/ask/survey-heading.vue'
-import SurveyFooter from '@/components/ask/survey-footer.vue'
 
 export default {
   beforeRouteLeave (to, from, next) {
     this.save()
     next()
-  },
-
-  components: {
-    Category,
-    QuestionBuilder,
-    CategoryBuilder,
-    PublishSurveyBuilder,
-    SurveyHeading,
-    SurveyFooter
   },
 
   mixins: [
