@@ -13,14 +13,9 @@
     </page-content>
 
     <client-only>
-      <question-builder
-        v-if="showQuestionBuilder" />
-
-      <category-builder
-        v-if="showCategoryBuilder" />
-
-      <publish-survey-builder
-        v-if="showPublishBuilder" />
+      <question-builder v-if="showQuestionBuilder" />
+      <category-builder v-if="showCategoryBuilder" />
+      <publish-survey-builder v-if="showPublishBuilder" />
 
       <survey-footer />
     </client-only>

@@ -59,7 +59,7 @@ export default {
   }
 
   .c-hero-content {
-    width: 600px;
+    width: 800px;
     max-width: 90%;
     margin: 0 auto;
     text-align: center;
