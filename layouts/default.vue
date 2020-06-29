@@ -1,23 +1,15 @@
 <template>
   <div data-app>
     <main-navigator />
-    <breadcrumb />
-
-    <div class="pane">
-      <nuxt />
-    </div>
+    <nuxt />
   </div>
 </template>
 
 <script>
 import '@/styles/animation.scss'
 import '@/styles/utilities.scss'
-import MainNavigator from '~/components/navigation/main-navigator.vue'
 
 export default {
-  components: {
-    MainNavigator
-  }
 }
 </script>
 
@@ -29,7 +21,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: #EDEDED;
+  background-color: black;
 
   @media (max-width: 767px) {
     font-size: 14px;
@@ -51,7 +43,6 @@ input, button, select, textarea, p {
 h1 {
   font-weight: 300;
   font-size: 2.5rem;
-  color: #526488;
   word-spacing: 1px;
   margin-bottom: 20px;
 }
@@ -76,6 +67,10 @@ hr {
   border: 1px solid #EDEDED;
   margin: 5px 15px 5px 5px;
   text-align: center;
+}
+
+a {
+  color: white;
 }
 
 .pane {

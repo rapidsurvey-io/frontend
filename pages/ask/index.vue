@@ -1,12 +1,16 @@
 <template>
   <div>
-    <survey-heading />
+    <page-hero show-breadcrumb>
+      <survey-heading />
+    </page-hero>
 
-    <category
-      v-for="(category, index) in categoryNames"
-      :key="index"
-      class="a-fadeIn"
-      :category-name="category" />
+    <page-content is-padded>
+      <category
+        v-for="(category, index) in categoryNames"
+        :key="index"
+        class="a-fadeIn"
+        :category-name="category" />
+    </page-content>
 
     <client-only>
       <question-builder

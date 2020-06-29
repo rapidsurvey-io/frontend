@@ -6,6 +6,6 @@
 
 <style scoped>
   .c-logo {
-    width: 200px;
+    height: 30px;
   }
 </style>

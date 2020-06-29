@@ -1,5 +1,5 @@
 <template>
-  <page-header>
+  <div>
     <editable-element
       element="h1"
       :text="surveyName"
@@ -9,7 +9,7 @@
       element="p"
       :text="surveyDescription"
       @component-updated="SURVEY_BUILDER_SET_SURVEY_DESCRIPTION" />
-  </page-header>
+  </div>
 </template>
 
 <script>

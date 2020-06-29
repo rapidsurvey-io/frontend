@@ -1,19 +1,13 @@
 <template>
   <div>
-    <page-header>
-      <template v-if="$auth.loggedIn">
-        <img class="c-avatar u-hidden-mobile" :src="$auth.user.picture">
-        <h1>Welcome Back {{ $auth.user.given_name }}</h1>
-        <p>Start a new Survey or edit an existing one below.</p>
-      </template>
-      <template v-else>
-        <h1>Dashboard</h1>
-        <p>Start a new Survey or edit an existing one below.</p>
-      </template>
-    </page-header>
-
-    <survey-template-selector />
-    <existing-survey-selector />
+    <page-hero show-breadcrumb>
+      <h1>Dashboard</h1>
+      <p>Welcome to your personal Dashboard. Create a new survey using a template below or continue editing an existing survey.</p>
+    </page-hero>
+    <page-content is-padded>
+      <survey-template-selector />
+      <existing-survey-selector />
+    </page-content>>
   </div>
 </template>
 

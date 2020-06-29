@@ -1,6 +1,9 @@
 import Vue from 'vue'
+import MainNavigator from '@/components/navigation/main-navigator.vue'
 import Modal from '@/components/shared/modal.vue'
 import Overlay from '@/components/shared/overlay.vue'
+import PageHero from '@/components/shared/page-hero.vue'
+import PageContent from '@/components/shared/page-content.vue'
 import SquareButton from '@/components/shared/square-button.vue'
 import FieldTextarea from '@/components/shared/field-textarea.vue'
 import FieldInput from '@/components/shared/field-input.vue'
@@ -12,10 +15,14 @@ import TabButton from '@/components/shared/tab-button.vue'
 import PageHeader from '@/components/shared/page-header.vue'
 import Breadcrumb from '@/components/shared/breadcrumb.vue'
 import EditableElement from '@/components/shared/editable-element.vue'
+import Card from '@/components/shared/card.vue'
 
 const sharedComponents = [
+  MainNavigator,
   Modal,
   Overlay,
+  PageHero,
+  PageContent,
   SquareButton,
   FieldTextarea,
   FieldInput,
@@ -26,7 +33,8 @@ const sharedComponents = [
   TabButton,
   PageHeader,
   Breadcrumb,
-  EditableElement
+  EditableElement,
+  Card
 ]
 
 sharedComponents.forEach((component) => {

@@ -46,7 +46,7 @@ export default {
   margin-right: 5px;
   margin-bottom: 5px;
   transition: all 0.2s ease-in-out;
-  border: 2px solid #EDEDED;
+  border: 2px solid #EFEFEF;
 
   &:hover {
     border: 2px solid white;

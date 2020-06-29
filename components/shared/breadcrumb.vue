@@ -10,6 +10,7 @@
         :icon="step.icon" />
 
       <span
+        v-if="step.title"
         v-text="step.title" />
     </nuxt-link>
   </div>
@@ -28,9 +29,14 @@ export default {
 
 <style scoped lang="scss">
   .c-breadcrumb {
+    position: absolute;
+    top: 50px;
+    width: 100%;
     display: flex;
-    background-color: #E2E2E2;
-    padding: 7.5px 30px;
+    border-top: 0.5px solid #2C2C2C;
+    border-bottom: 0.5px solid #2C2C2C;
+    padding: 7.5px 20px;
+    z-index: 5000;
 
     @media (max-width: 768px) {
       padding: 7.5px 10px;
@@ -39,14 +45,18 @@ export default {
 
   .c-breadcrumb-link {
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 15px;
     padding: 10px;
-    color: black;
+    color: white;
     border-radius: 10px;
-    transition: background-color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+      margin-right: 5px;
+    }
 
     &:hover {
-      background-color: #C4C4C4;
+      background-color: #2C2C2C;
     }
   }
 </style>

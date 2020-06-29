@@ -82,7 +82,7 @@ export default {
   }
 
   .c-category-header {
-    top: 75px;
+    top: 20px;
     left: 0;
     right: 0;
     position: sticky;
@@ -123,8 +123,10 @@ export default {
     }
 
     @media (max-width: 768px) {
-      top: 65px;
+      top: 0;
       padding: 30px 30px 30px 30px;
+      margin-left: -20px;
+      margin-right: -20px;
       z-index: 2;
       margin-bottom: 20px;
       opacity: 1;

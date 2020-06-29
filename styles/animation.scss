@@ -1,12 +1,15 @@
 page-enter-active,
 .page-leave-active {
-  transition: all .4s ease-out;
+  transition: all 0.4s ease;
+}
+
+.page-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .page-enter,
 .page-leave-active {
   opacity: 0;
-  transform-origin: 50% 50%;
 }
 
 @keyframes a-translocate_1 {

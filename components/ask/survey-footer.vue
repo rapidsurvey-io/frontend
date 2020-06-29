@@ -37,7 +37,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #EDEDED;
+  background-color: #EFEFEF;
   padding-top: 15px;
   padding-right: 10px;
   text-align: right;

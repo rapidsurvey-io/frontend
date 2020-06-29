@@ -1,10 +1,11 @@
 <template>
-  <page-header>
-    <h1>This website is currently under active development</h1>
-    <p>We are just designing and developing a prototype at the moment, but you are always free to play with whatever we have created, it is naturally subject to significant change.</p>
-    <br>
-    <nuxt-link to="dashboard">Check out our progress so far?</nuxt-link>
-  </page-header>
+  <div>
+    <page-hero is-tall>
+      <h1>Under Development</h1>
+      <p>RapidSurvey is in very early development stages, check out our progress below</p>
+      <nuxt-link to="dashboard">Try it out</nuxt-link>
+    </page-hero>
+  </div>
 </template>
 
 <script>
