@@ -21,7 +21,7 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "cookie-universal-nuxt": "^2.1.4",
-    "nuxt": "^2.13.0",
+    "nuxt": "^2.13.3",
     "nuxt-webfontloader": "^1.1.0",
     "shortid": "^2.2.15",
     "vue-star-rating": "^1.6.1",
