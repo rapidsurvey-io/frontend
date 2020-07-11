@@ -1,5 +1,5 @@
 <template>
-  <field-select
+  <form-select
     label="Pick one option">
     <option
       v-for="(choice, index) in responses"
@@ -7,7 +7,7 @@
       value="choice">
       {{ choice }}
     </option>
-  </field-select>
+  </form-select>
 </template>
 
 <script>

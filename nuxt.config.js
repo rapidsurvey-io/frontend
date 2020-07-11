@@ -21,7 +21,7 @@ export default {
 
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '@tomorepo/squarebutton/dist/squarebutton.css',
+    '@tomorepo/formcollection/dist/formcollection.css',
     '@tomorepo/modal/dist/modal.css',
     '@tomorepo/editableelement/dist/editableelement.css'
   ],

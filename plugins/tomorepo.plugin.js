@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import SquareButton from '@tomorepo/squarebutton'
+import FormCollection from '@tomorepo/formcollection'
 import Modal from '@tomorepo/modal'
 import EditableElement from '@tomorepo/editableelement'
 
-Vue.use(SquareButton)
+Vue.use(FormCollection)
 Vue.use(Modal)
 Vue.use(EditableElement)

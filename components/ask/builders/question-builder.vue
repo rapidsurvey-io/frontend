@@ -8,7 +8,7 @@
     </template>
 
     <template v-slot:body>
-      <field-select
+      <form-select
         v-model="categorySelection"
         :model="categorySelection"
         label="Which category should the question belong too?">
@@ -18,9 +18,9 @@
           :key="index"
           :value="selectedCategoryName"
           v-text="selectedCategoryName" />
-      </field-select>
+      </form-select>
 
-      <field-input
+      <form-input
         v-show="showCategoryNameField"
         v-model="categoryName"
         :model="categoryName"
@@ -29,22 +29,23 @@
 
       <hr>
 
-      <field-input
+      <form-input
         v-model="questionName"
         :model="questionName"
         label="What do you want to ask? (*)"
         is-required />
 
-      <field-textarea
+      <form-input
         v-show="showDescriptionField"
         v-model="questionDescription"
         :model="questionDescription"
         class="a-fadeIn"
+        field-type="textarea"
         label="Would you like to describe the question?" />
 
       <hr>
 
-      <field-select
+      <form-select
         v-model="responseType"
         :model="responseType"
         label="How should the visitor respond?">
@@ -52,7 +53,7 @@
         <option value="2">Free Text</option>
         <option value="4">Multi-line text</option>
         <option value="5">Star Rating</option>
-      </field-select>
+      </form-select>
     </template>
 
     <template v-slot:footer>
