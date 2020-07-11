@@ -23,7 +23,8 @@ export default {
     '@fortawesome/fontawesome-svg-core/styles.css',
     '@tomorepo/formcollection/dist/formcollection.css',
     '@tomorepo/modal/dist/modal.css',
-    '@tomorepo/editableelement/dist/editableelement.css'
+    '@tomorepo/editableelement/dist/editableelement.css',
+    '@tomorepo/overlay/dist/overlay.css'
   ],
 
   head: {
