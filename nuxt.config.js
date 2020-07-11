@@ -20,7 +20,11 @@ export default {
   components: true,
 
   css: [
-    '@fortawesome/fontawesome-svg-core/styles.css'
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '@tomorepo/formcollection/dist/formcollection.css',
+    '@tomorepo/modal/dist/modal.css',
+    '@tomorepo/editableelement/dist/editableelement.css',
+    '@tomorepo/overlay/dist/overlay.css'
   ],
 
   head: {
@@ -60,6 +64,7 @@ export default {
 
   plugins: [
     '~/plugins/fontawesome.plugin.js',
+    '~/plugins/tomorepo.plugin.js',
     { src: '~/plugins/state-persist', ssr: false }
   ],
 

@@ -8,15 +8,16 @@
     </template>
 
     <template v-slot:body>
-      <field-input
+      <form-input
         v-model="newCategoryName"
         :model="newCategoryName"
         label="What do you want to call the category?"
         is-required />
 
-      <field-textarea
+      <form-input
         v-model="newCategoryDescription"
         :model="newCategoryDescription"
+        field-type="textarea"
         label="Would you like to describe the category?" />
 
       <field-colour-picker

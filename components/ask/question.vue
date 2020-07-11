@@ -10,9 +10,18 @@
 
     <div>
       <yes-no v-if="responseType === '1'" />
-      <free-text v-if="responseType === '2'" />
+      <form-input
+        v-if="responseType === '2'"
+        label="Your answer"
+        is-required />
+
+      <form-input
+        v-if="responseType === '4'"
+        label="Your answer"
+        field-type="textarea"
+        is-required />
+
       <dropdown v-if="responseType === '3'" :responses="responses" />
-      <multiline-text v-if="responseType === '4'" />
       <star-rating v-if="responseType === '5'" />
     </div>
 
